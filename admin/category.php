@@ -307,13 +307,13 @@ require 'header.php';
                 <!-- <small>Or sign in with credentials</small> -->
               </div>
 
-              <form role="form" method="post" action="category.php">
+              <form role="form" method="post" action="class/logic.php">
                 <div class="form-group mb-3">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-bullet-list-67 text-default"></i></span>
                     </div>
-                    <input class="form-control" type="text" readonly>
+                    <input class="form-control" type="text" readonly value="HOSTING">
                     <input type="hidden" name="pid">
                   </div>
                 </div>
@@ -341,7 +341,7 @@ require 'header.php';
                 </div> -->
                 <div class="text-center">
                   <!-- <button type="button" name="submit" class="btn btn-primary my-4">Create Category</button> -->
-                  <input type="submit" value="Create Category" class="btn btn-primary" name="submit">
+                  <input type="submit" value="Create Category" class="btn btn-primary" name="categorysubmit">
                 </div>
               </form>
             </div>
