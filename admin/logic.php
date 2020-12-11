@@ -2,10 +2,7 @@
 include("admindbcon.php");
 include("productclass.php");
 
-$id = $_GET['id'];
-
 $dbconn = new admindbcon();
-
 $obj = new productclass();
 
 if (isset($_POST['categorysubmit'])) {
@@ -21,13 +18,16 @@ if (isset($_POST['categorysubmit'])) {
 }
 
 
-if (id) {
 
+//Delete Category
+$id = $_GET['id'];
+//echo $id;
+if ($id) {
     $sql = $obj->delete($dbconn->conn, $id);
     if ($sql) {
-        header("location:admin/category.php");
+        header("location:category.php");
     } else {
-        header("location:admin/category.php");
+        header("location:category.php");
     }
 }
 

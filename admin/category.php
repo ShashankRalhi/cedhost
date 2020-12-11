@@ -164,7 +164,7 @@ $obj = new productclass();
 
                       <td>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
-                        <a class="btn btn-danger text-white" href="class/logic.php?id = <?php echo $row['id']; ?>">Delete</button>
+                        <a class="btn btn-danger text-white" href="class/logic.php?id=<?php echo $row['id']; ?>">Delete</button>
                       </td>
                     </tr>
               <?php
