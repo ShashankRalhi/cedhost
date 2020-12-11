@@ -9,11 +9,6 @@ class productclass
         $sql = "INSERT INTO `tbl_product`(`prod_parent_id`, `prod_name`, `link`, `prod_available`, `prod_launch_date`) VALUES (1,'" . $cat_name . "','" . $cat_link . "',1,NOW())";
         $result = $conn->query($sql);
         return $result;
-        // if ($conn->multi_query($sql) === TRUE) {
-        //     echo "New records created successfully";
-        // } else {
-        //     echo "Error: " . $sql . "<br>" . $conn->error;
-        // }
     }
 
     //Fetch Category
@@ -32,6 +27,21 @@ class productclass
             return $row1;
         } else {
             echo "0 results";
+        }
+    }
+
+
+
+    //Delete Product
+    public function delete($conn, $id)
+    {
+
+        $sql = "DELETE FROM `tbl_product` WHERE 0";
+        $result = $conn->query($sql);
+        if ($result) {
+            echo "<script>alert('Successfully category deleted');</script>";
+        } else {
+            echo "<script>alert('Unsuccessfully category deleted');</script>";
         }
     }
 }

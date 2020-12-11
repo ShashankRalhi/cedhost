@@ -181,9 +181,42 @@ if (isset($_POST['vemail'])) {
         }
     }
 
-    if ($_SESSION['otpm'] == $vpmotp) {
-        $sql = $obj->verifymobile($dbconn->conn, $vmobile);
-        if ($sql) {
+
+
+
+
+
+
+
+    //Send-Resend Email
+    if (isset($_POST['rsemail1'])) {
+
+        //Email Verification Code
+        $otp = rand(1000, 9999);
+        $otpm = rand(1000, 9999);
+        $_SESSION['otp'] = $otp;
+        $_SESSION['otpm'] = $otpm;
+        $mail = new PHPMailer();
+        try {
+            $mail->isSMTP(true);
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'ralhicedcosss@gmail.com';
+            $mail->Password = '!@#$Ralhi123';
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+            $mail->setfrom('ralhicedcosss@gmail.com', 'CedHosting');
+            $mail->addAddress($_SESSION['vemail']);
+            $mail->addAddress($_SESSION['vemail'], $_SESSION['vname']);
+
+            $mail->isHTML(true);
+            $mail->Subject = 'Account Verification';
+            $mail->Body = 'Hi User,Here is your otp for account verification' . $otp;
+            $mail->AltBody = 'Body in plain text for non-HTML mail clients';
+            $mail->send();
+            header('location: verification.php');
+        } catch (Exception $e) {
             echo "<script>alert('Mobile Verified & Now you can Login');</script>";
             header("location:login.php");
         }
