@@ -32,7 +32,7 @@ class productclass
 
 
 
-    //Delete Product
+    //Delete Category
     public function delete($conn, $id)
     {
 
@@ -43,6 +43,15 @@ class productclass
         } else {
             return $result;
         }
+    }
+
+
+    //Add Product
+    public function addpdt($conn, $name, $link)
+    {
+        $sql = "INSERT INTO `tbl_product`(`prod_parent_id`, `prod_name`, `link`, `prod_available`, `prod_launch_date`) VALUES (1,'" . name . "','" . $link . "',1,NOW())";
+        $result = $conn->query($sql);
+        return $result;
     }
 }
 

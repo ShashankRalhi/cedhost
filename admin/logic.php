@@ -54,7 +54,7 @@ if (isset($_POST['pdt_submit'])) {
     $lang = $_POST['lang'];
     $mail = $_POST['mail'];
 
-    $sql = $obj->insert($dbconn->conn, $name, $link);
+    $sql = $obj->addpdt($dbconn->conn, $name, $link);
     // $sql = $obj->addpdt($dbconn->conn, $host, $name, $link, $mnt, $year, $sku, $space, $band, $domain, $lang, $mail);
 } else {
     //echo "0 results";
