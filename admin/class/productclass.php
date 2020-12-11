@@ -3,16 +3,17 @@
 
 class productclass
 {
-    //For Registration
+    //FORS INSERT PRODUCT IN DB
     public function insert($conn, $cat_name, $cat_link)
     {
         $sql = "INSERT INTO `tbl_product`(`prod_parent_id`, `prod_name`, `link`, `prod_available`, `prod_launch_date`) VALUES (1,'" . $cat_name . "','" . $cat_link . "',1,NOW())";
-
-        if ($conn->multi_query($sql) === TRUE) {
-            echo "New records created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+        $result = $conn->query($sql);
+        return $result;
+        // if ($conn->multi_query($sql) === TRUE) {
+        //     echo "New records created successfully";
+        // } else {
+        //     echo "Error: " . $sql . "<br>" . $conn->error;
+        // }
     }
 
     //Fetch Category
