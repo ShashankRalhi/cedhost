@@ -1,8 +1,8 @@
 <?php
 require 'header.php';
 
-include("class/admindbcon.php");
-include("class/productclass.php");
+include("admindbcon.php");
+include("productclass.php");
 
 $dbconn = new admindbcon();
 
@@ -52,7 +52,7 @@ $obj = new productclass();
               <!-- <small>Or sign in with credentials</small> -->
             </div>
 
-            <form role="form" method="post" action="class/logic.php">
+            <form role="form" method="post" action="logic.php">
               <div class="form-group mb-3">
                 <div class="input-group input-group-merge input-group-alternative">
                   <div class="input-group-prepend">
@@ -163,8 +163,8 @@ $obj = new productclass();
                       </td>
 
                       <td>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
-                        <a class="btn btn-danger text-white" href="class/logic.php?id=<?php echo $row['id']; ?>">Delete</button>
+                        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button> -->
+                        <a class="btn btn-danger text-white" href="logic.php?id=<?php echo $row['id']; ?>">Delete</button>
                       </td>
                     </tr>
               <?php

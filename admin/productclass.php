@@ -36,12 +36,12 @@ class productclass
     public function delete($conn, $id)
     {
 
-        $sql = "DELETE FROM `tbl_product` WHERE 0";
+        $sql = "DELETE FROM `tbl_product` WHERE `id` = '" . $id . "'";
         $result = $conn->query($sql);
         if ($result) {
-            echo "<script>alert('Successfully category deleted');</script>";
+            return $result;
         } else {
-            echo "<script>alert('Unsuccessfully category deleted');</script>";
+            return $result;
         }
     }
 }
