@@ -59,6 +59,7 @@ class user
     return $result;
   }
 
+
   //Verify Mobile Data
   public function verifymobile($conn, $vmobile)
   {

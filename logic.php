@@ -63,7 +63,7 @@ if (isset($_POST['login'])) {
             //print_r($_SESSION);
             //echo "<script>alert('Successfull');</script>";
             if ($_SESSION['admin'] == 1) {
-                header("location:Admin/admin.php");
+                header("location:admin/index.php");
             } else {
                 header("location:index.php");
             }
@@ -72,6 +72,10 @@ if (isset($_POST['login'])) {
 } else {
     //echo "0 results";
 }
+
+
+
+
 
 //Send-Resend Email
 if (isset($_POST['rsemail1'])) {
@@ -144,10 +148,8 @@ if (isset($_POST['rsemail2'])) {
             "content-type: application/json"
         ),
     ));
-
     $response = curl_exec($curl);
     $err = curl_error($curl);
-
     curl_close($curl);
 
     if ($err) {
@@ -155,9 +157,11 @@ if (isset($_POST['rsemail2'])) {
     } else {
         echo $response;
     }
-
     header("location:verification.php");
 }
+
+
+
 
 
 //VERIFY Email-Mobile
@@ -168,7 +172,6 @@ if (isset($_POST['vemail'])) {
 
     $vpeotp = $_POST['eotp'];
     $vpmotp = $_POST['motp'];
-
 
     if ($_SESSION['otp'] == $vpeotp) {
         $sql = $obj->verifyemail($dbconn->conn, $vemail);
@@ -186,7 +189,7 @@ if (isset($_POST['vemail'])) {
         }
     }
 
-    if ($_SESSION['otp'] == $vpeotp && $_SESSION['otpm'] == $vpmotp) {
+    if ($_SESSION['otp'] == $vpeotp || $_SESSION['otpm'] == $vpmotp) {
         // echo "<script>alert('Email Success');</script>";
         $sql = $obj->verify($dbconn->conn, $vemail, $vmobile);
         if ($sql) {

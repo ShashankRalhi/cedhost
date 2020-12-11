@@ -1,26 +1,5 @@
 <?php
 require 'header.php';
-//   require 'Product.php';
-//   $Product = new Product();
-
-// $data =  $Product->fetchParentCategory();
-// // print_r($data);
-
-// $msg = '';
-// if (isset($_POST['submit'])) {
-//     $cname = $_POST['cname'];
-//     $link = $_POST['link'];
-//     $pid = $_POST['pid'];
-//     // echo $pid;
-//     // exit();
-
-//     $res = $Product->addCategory($cname, $link, $pid);
-//     if ($res == true) {
-//         $msg = "Successfully Added Your Category !";
-//     } else {
-//         $msg = "Faild !";
-//     }
-// }
 ?>
 
 <!-- Main content -->
@@ -227,9 +206,9 @@ require 'header.php';
                 <div class="media-body  ml-2  d-none d-lg-block">
                   <span class="mb-0 text-sm  font-weight-bold">
                     <?php
-                    // if (isset($_SESSION['admindata'])) {
-                    //     echo $_SESSION['admindata']['name'];
-                    // }
+                    if (isset($_SESSION['username'])) {
+                      echo $_SESSION['username'];
+                    }
                     ?>
                   </span>
                 </div>
