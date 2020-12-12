@@ -1,10 +1,5 @@
 <?php
-
-
 require 'header.php';
-
-
-
 
 include("admindbcon.php");
 include("productclass.php");

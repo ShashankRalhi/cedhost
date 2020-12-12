@@ -69,7 +69,7 @@ session_start();
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="viewproduct.php">
                 <i class="ni ni-single-02 text-yellow"></i>
                 <span class="nav-link-text">View Products</span>
               </a>
