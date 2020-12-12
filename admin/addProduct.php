@@ -3,9 +3,12 @@
 
 require 'header.php';
 
+
+
+
 include("admindbcon.php");
 include("productclass.php");
-
+// echo "hii";
 $dbconn = new admindbcon();
 
 $obj = new productclass();
@@ -159,7 +162,7 @@ $obj = new productclass();
             "name": "language",
             "qid": "19",
             "subLabel": "Separate by (,) Ex: PHP, MySQL, MongoDB",
-            "text": "Language \u002F Technology Support",
+            "text": "Language \u002F Technology  Support",
             "type": "control_textbox"
         }, {
             "description": "",
@@ -266,7 +269,7 @@ $obj = new productclass();
                 "name": "language",
                 "qid": "19",
                 "subLabel": "Separate by (,) Ex: PHP, MySQL, MongoDB",
-                "text": "Language \u002F Technology Support",
+                "text": "Language \u002F Technology  Support",
                 "type": "control_textbox"
             }, {
                 "description": "",
@@ -281,7 +284,7 @@ $obj = new productclass();
 </head>
 
 <body>
-    <form class="jotform-form" method="POST" action="logic.php">
+    <form class="jotform-form" action="logic.php" method="POST" id="203442420701036" accept-charset="utf-8" autocomplete="on">
         <input type="hidden" name="formID" value="203442420701036" />
         <input type="hidden" id="JWTContainer" value="" />
         <input type="hidden" id="cardinalOrderNumber" value="" />
@@ -307,15 +310,15 @@ $obj = new productclass();
                         </span>
                     </label>
                     <div id="cid_3" class="form-input-wide jf-required" data-layout="half">
-                        <select name="hosting" class="form-control">
+                        <select name="select" id="" class="form-control">
                             <?php
-                            $row1 = $obj->fetch($dbconn->conn);
+                            $row1 = $obj->fetchcategory($dbconn->conn);
                             if (isset($row1)) {
                                 foreach ($row1 as $key => $row) {
 
                                     if ($row['id'] != 1) {
                             ?>
-                                        <option><?php echo $row['prod_name']; ?></option>
+                                        <option value="<?php echo $row['id']; ?>"><?php echo $row['prod_name']; ?></option>
                             <?php
                                     }
                                 }
@@ -332,13 +335,13 @@ $obj = new productclass();
                         </span>
                     </label>
                     <div id="cid_4" class="form-input-wide jf-required" data-layout="half">
-                        <input type="text" name="pdt_name" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_4" required="" />
+                        <input type="text" id="input_4" name="name" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" pattern="^[ A-Za-z0-9_@./#$&+-]*$" data-component="textbox" aria-labelledby="label_4" required />
                     </div>
                 </li>
                 <li class="form-line" data-type="control_textbox" id="id_5">
                     <label class="form-label form-label-top form-label-auto" id="label_5" for="input_5"> Page URL </label>
                     <div id="cid_5" class="form-input-wide" data-layout="half">
-                        <input type="text" id="input_5" name="pdt_url" data-type="input-textbox" class="form-textbox" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_5" />
+                        <input type="text" id="input_5" name="url" data-type="input-textbox" class="form-textbox" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_5" />
                     </div>
                 </li>
                 <li class="form-line" data-type="control_divider" id="id_8">
@@ -368,7 +371,7 @@ $obj = new productclass();
                     </label>
                     <div id="cid_11" class="form-input-wide jf-required" data-layout="half">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="number" name="pdt_mnt_value" data-type="input-number" class=" form-number-input form-textbox validate[required]" style="width:310px" size="310" value="" placeholder="ex: 23" data-component="number" aria-labelledby="label_11 sublabel_input_11" required="" step="any" />
+                            <input type="number" id="input_11" name="price1" data-type="input-number" class=" form-number-input form-textbox validate[required]" style="width:310px" size="310" value="" placeholder="ex: 23" data-component="number" aria-labelledby="label_11 sublabel_input_11" required="" step="any" />
                             <label class="form-sub-label" for="input_11" id="sublabel_input_11" style="min-height:13px" aria-hidden="false"> This would be Monthly Plan </label>
                         </span>
                     </div>
@@ -382,7 +385,7 @@ $obj = new productclass();
                     </label>
                     <div id="cid_12" class="form-input-wide jf-required" data-layout="half">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="number" name="pdt_anl_value" data-type="input-number" class=" form-number-input form-textbox validate[required]" style="width:310px" size="310" value="" placeholder="ex: 23" data-component="number" aria-labelledby="label_12 sublabel_input_12" required="" step="any" />
+                            <input type="number" id="input_12" name="price2" data-type="input-number" class=" form-number-input form-textbox validate[required]" style="width:310px" size="310" value="" placeholder="ex: 23" data-component="number" aria-labelledby="label_12 sublabel_input_12" required="" step="any" />
                             <label class="form-sub-label" for="input_12" id="sublabel_input_12" style="min-height:13px" aria-hidden="false"> This would be Annual Price </label>
                         </span>
                     </div>
@@ -395,7 +398,7 @@ $obj = new productclass();
                         </span>
                     </label>
                     <div id="cid_13" class="form-input-wide jf-required" data-layout="half">
-                        <input type="text" name="pdt_sku" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_13" required="" />
+                        <input type="text" id="input_13" name="sku" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_13" required="" />
                     </div>
                 </li>
                 <li class="form-line" data-type="control_divider" id="id_14">
@@ -422,7 +425,7 @@ $obj = new productclass();
                     </label>
                     <div id="cid_16" class="form-input-wide jf-required" data-layout="half">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="text" name="web_space" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_16 sublabel_input_16" required="" />
+                            <input type="text" id="input_16" name="webspace" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_16 sublabel_input_16" required="" />
                             <label class="form-sub-label" for="input_16" id="sublabel_input_16" style="min-height:13px" aria-hidden="false"> Enter 0.5 for 512 MB </label>
                         </span>
                     </div>
@@ -436,7 +439,7 @@ $obj = new productclass();
                     </label>
                     <div id="cid_17" class="form-input-wide jf-required" data-layout="half">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="text" name="band" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_17 sublabel_input_17" required="" />
+                            <input type="text" id="input_17" name="band" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_17 sublabel_input_17" required="" />
                             <label class="form-sub-label" for="input_17" id="sublabel_input_17" style="min-height:13px" aria-hidden="false"> Enter 0.5 for 512 MB </label>
                         </span>
                     </div>
@@ -450,7 +453,7 @@ $obj = new productclass();
                     </label>
                     <div id="cid_18" class="form-input-wide jf-required" data-layout="half">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="text" name="domain" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_18 sublabel_input_18" required="" />
+                            <input type="text" id="input_18" name="free" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_18 sublabel_input_18" required="" />
                             <label class="form-sub-label" for="input_18" id="sublabel_input_18" style="min-height:13px" aria-hidden="false"> Enter 0 if no domain available in this service </label>
                         </span>
                     </div>
@@ -464,7 +467,7 @@ $obj = new productclass();
                     </label>
                     <div id="cid_19" class="form-input-wide jf-required" data-layout="half">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="text" name="lang" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_19 sublabel_input_19" required="" />
+                            <input type="text" id="input_19" name="lang" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_19 sublabel_input_19" required="" />
                             <label class="form-sub-label" for="input_19" id="sublabel_input_19" style="min-height:13px" aria-hidden="false"> Separate by (,) Ex: PHP, MySQL, MongoDB </label>
                         </span>
                     </div>
@@ -478,7 +481,7 @@ $obj = new productclass();
                     </label>
                     <div id="cid_20" class="form-input-wide jf-required" data-layout="half">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="text" name="mail" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_20 sublabel_input_20" required="" />
+                            <input type="text" id="input_20" name="mail" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_20 sublabel_input_20" required="" />
                             <label class="form-sub-label" for="input_20" id="sublabel_input_20" style="min-height:13px" aria-hidden="false"> Enter Number of mailbox will be provided, enter 0 if none </label>
                         </span>
                     </div>
@@ -486,9 +489,8 @@ $obj = new productclass();
                 <li class="form-line" data-type="control_button" id="id_2">
                     <div id="cid_2" class="form-input-wide" data-layout="full">
                         <div data-align="auto" class="form-buttons-wrapper form-buttons-auto jsTest-button-wrapperField">
-                            <button type="submit" name="pdt_submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
-                                Create Now
-                            </button>
+                            <input id="input_2" type="submit" name="submit10" value="Add Product" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="" required />
+
                         </div>
                     </div>
                 </li>

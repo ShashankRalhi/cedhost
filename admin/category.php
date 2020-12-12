@@ -1,6 +1,5 @@
 <?php
 require 'header.php';
-
 include("admindbcon.php");
 include("productclass.php");
 
@@ -52,13 +51,13 @@ $obj = new productclass();
               <!-- <small>Or sign in with credentials</small> -->
             </div>
 
-            <form role="form" method="post" action="logic.php">
+            <form role="form" method="POST" action="logic.php">
               <div class="form-group mb-3">
                 <div class="input-group input-group-merge input-group-alternative">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-bullet-list-67 text-default"></i></span>
                   </div>
-                  <input class="form-control" type="text" readonly value="HOSTING">
+                  <input class="form-control" type="text" readonly value="Hosting">
                   <input type="hidden" name="pid">
                 </div>
               </div>
@@ -95,139 +94,172 @@ $obj = new productclass();
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <div class="card ">
-        <div class="card-header border-0">
-          <h3 class="mb-0">Product Table</h3>
-        </div>
-        <div class="table-responsive">
-          <table class="table align-items-center table-flush" id="Table">
-            <thead class="thead-light">
+  <!-- <div class="row">
+        <div class="col">
+          <div class="card ">
+          <div class="card-header border-0">
+              <h3 class="mb-0">Light table</h3>
+            </div> -->
+  <div class="table-responsive">
+    <table class="table align-items-center table-flush" id="Table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" class="sort" data-sort="name">Id</th>
+          <th scope="col" class="sort" data-sort="budget">Parent Product Id</th>
+          <th scope="col" class="sort" data-sort="status">Product Name </th>
+          <th scope="col">Link</th>
+          <th scope="col">Product Available</th>
+          <th scope="col" class="sort" data-sort="completion">Product Launch Date</th>
+          <th scope="col">Action</th>
+
+
+        </tr>
+      </thead>
+      <tbody class="list">
+        <?php
+
+        $row1 = $obj->fetchcategory($dbconn->conn);
+        if (isset($row1)) {
+          foreach ($row1 as $key => $row) {
+
+            if ($row['id'] != 1) {
+
+
+
+
+
+
+        ?>
               <tr>
-                <th scope="col" class="sort" data-sort="name">Id</th>
-                <th scope="col" class="sort" data-sort="budget">Parent Product </th>
-                <th scope="col" class="sort" data-sort="status">Product Name </th>
-                <th scope="col">Link</th>
-                <th scope="col">Product Available</th>
-                <th scope="col" class="sort" data-sort="completion">Product Launch Date</th>
-                <th scope="col" class="sort" data-sort="completion">Action</th>
+                <th scope="row">
+                  <?php echo $row['id']; ?>
+                </th>
+                <td class="budget">
+                  <?php
+                  if ($row['prod_parent_id'] == 1) {
 
-              </tr>
-            </thead>
-            <tbody class="list">
-              <?php
-              $row1 = $obj->fetch($dbconn->conn);
-              if (isset($row1)) {
-                foreach ($row1 as $key => $row) {
-
-                  if ($row['id'] != 1) {
-              ?>
-                    <tr>
-                      <th scope="row">
-                        <?php echo $row['id']; ?>
-                      </th>
-                      <td class="budget">
-                        <?php
-                        if ($row['prod_parent_id'] == 1) {
-
-                          $parent = "Hosting";
-                        }
-                        echo $parent; ?>
-                      </td>
-                      <td>
-                        <?php echo $row['prod_name']; ?>
-
-                      </td>
-                      <td>
-
-                        <?php
-                        if ($row['link'] == "") {
-                          $link = "Null";
-                        } else {
-                          $link = $row['link'];
-                        }
-
-                        echo $link;
-
-                        ?>
-
-                      </td>
-                      <td>
-
-                        <?php echo $row['prod_available']; ?>
-
-                      </td>
-                      <td>
-                        <?php echo $row['prod_launch_date']; ?>
-                      </td>
-
-                      <td>
-                        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button> -->
-                        <a class="btn btn-danger text-white" href="logic.php?id=<?php echo $row['id']; ?>">Delete</button>
-                      </td>
-                    </tr>
-              <?php
+                    $parent = "Hosting";
                   }
-                }
-              } ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+                  echo $parent; ?>
+                </td>
+                <td>
+                  <?php echo $row['prod_name']; ?>
+
+                </td>
+                <td>
+
+                  <?php
+                  if ($row['link'] == "") {
+                    $link = "Null";
+                  } else {
+                    $link = $row['link'];
+                  }
+
+                  echo $link;
+
+                  ?>
+
+                </td>
+                <td>
+
+                  <?php echo $row['prod_available']; ?>
+
+                </td>
+                <td>
+                  <?php echo $row['prod_launch_date']; ?>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" input-type="hidden" data-target="#modalForm<?php echo $row['id']; ?>">Edit</a>
+                    <a href="class/logic.php?id5=<?php echo $row['id'] ?>" class="btn btn-warning btn-rounded mb-4">Delete</a>
+                  </div>
+                </td>
+              </tr>
+
+              <div class="modal fade" id="modalForm<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header text-center">
+                      <h4 class="modal-title w-100 font-weight-bold">Update data</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <form action="class/logic.php" method="POST">
+                      <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                          <label data-error="wrong" data-success="right" for="defaultForm-email">Parent Name</label>
+                          <input type="text" id="defaultForm-email" class="form-control validate" value="<?php echo $parent ?>" readonly name="updateparent">
+                          <input type="hidden" name="hidden" value="<?php echo $row['id']; ?>">
+                        </div>
+
+                        <div class="md-form mb-5">
+                          <label data-error="wrong" data-success="right" for="defaultForm-email">Product Name</label>
+                          <input type="text" id="defaultForm-email" class="form-control validate" value="<?php echo $row['prod_name'] ?>" name="cname1">
+
+                        </div>
+
+
+                        <div class="md-form mb-4">
+                          <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
+                          <input type="text" id="defaultForm-pass" class="form-control validate" name="link1" value="<?php echo $link ?>">
+
+                        </div>
+
+                        <div class="md-form mb-4">
+                          <?php
+                          if ($row['prod_available'] == 1) {
+                            $avail = "Available";
+                          } else
+                            $avail = "Unavailable"
+                          ?>
+                          <label data-error="wrong" data-success="right" for="defaultForm-pass">Available</label>
+                          <select class="form-control validate" name="is_available">
+                            <option value="<?php echo $row['prod_available'] ?>"><?php echo $avail ?></option>
+                            <?php
+
+                            if ($avail == "Available") {
+                            ?>
+                              <option value="2">Unavailable</option>
+
+                            <?php
+                            } else {
+                            ?>
+                              <option value="1">Available</option>
+
+                            <?php
+
+
+                            }
+                            ?>
+                          </select>
+
+
+                        </div>
+
+                      </div>
+                      <div class="modal-footer d-flex justify-content-center">
+                        <input type="submit" class="btn btn-default" id="Update" value="Update" name="categorysubmit1">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+        <?php
+            }
+          }
+        } ?>
+      </tbody>
+    </table>
   </div>
-
-
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <form role="form" method="post" action="class/logic.php" style="width: 100%;">
-            <div class="form-group mb-3">
-              <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="ni ni-bullet-list-67 text-default"></i></span>
-                </div>
-                <input class="form-control" type="text" readonly value="HOSTING">
-                <input type="hidden" name="pid">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="ni ni-bullet-list-67 text-default"></i></i></span>
-                </div>
-                <input class="form-control" name="cname" placeholder="Category Name" type="text">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="ni ni-bullet-list-67 text-default"></i></span>
-                </div>
-                <input class="form-control" name="link" placeholder="Link" type="text">
-              </div>
-            </div>
-            <!-- <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                  <label class="custom-control-label" for=" customCheckLogin">
-                    <span class="text-muted">Remember me</span>
-                  </label>
-                </div> -->
-            <div class="text-center">
-              <!-- <button type="button" name="submit" class="btn btn-primary my-4">Create Category</button> -->
-              <input type="submit" value="Update" class="btn btn-primary" name="categorysubmit">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php
-  require 'footer.php';
-  ?>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<?php include 'footer.php'; ?>

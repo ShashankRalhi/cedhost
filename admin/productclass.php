@@ -8,11 +8,19 @@ class productclass
     {
         $sql = "INSERT INTO `tbl_product`(`prod_parent_id`, `prod_name`, `link`, `prod_available`, `prod_launch_date`) VALUES (1,'" . $cat_name . "','" . $cat_link . "',1,NOW())";
         $result = $conn->query($sql);
-        return $result;
+        echo "<script>
+            alert('Category Updated successfully')
+            window.location='../category.php'</script>";
+        // return $result;
+        // // if ($conn->multi_query($sql) === TRUE) {
+        //     echo "New records created successfully";
+        // } else {
+        //     echo "Error: " . $sql . "<br>" . $conn->error;
+        // }
     }
 
     //Fetch Category
-    public function fetch($conn)
+    public function fetchcategory($conn)
     {
         $row1 = array();
         $sql = "SELECT * FROM `tbl_product`";
@@ -31,27 +39,91 @@ class productclass
     }
 
 
+    // public function update($conn, $id, $cat_name1 ,$cat_link1 ,$is_available)
+    // {
+    //     //echo $cat_name1."<br>",$cat_link1."<br>",$id,$is_available;
+    //     $sql = "UPDATE `tbl_product` SET  `prod_name` = '".$cat_name1."' ,  `link` = '".$cat_link1."' , `prod_available` = '".$is_available."'  WHERE `id`= '".$id."' ";
+    //     if ($conn->query($sql) === TRUE) {
+    //         echo "<script>
 
-    //Delete Category
-    public function delete($conn, $id)
+    //     </script>";
+    //       } else {
+    //         echo "Error updating record: " . $conn->error;
+    //       } 
+    // }
+
+
+
+    //     public function delete($conn, $id)
+    // {
+
+    // $sql = "DELETE FROM `tbl_product` WHERE `id` = '" . $id . "'";
+    // $result = $conn->query($sql);
+    // if ($result) {
+    // return $result;
+    // } else {
+    // return $result;
+    // }
+    // }
+
+
+
+    function updatecategory($name, $select, $link, $hidden, $conn)
     {
-
-        $sql = "DELETE FROM `tbl_product` WHERE `id` = '" . $id . "'";
-        $result = $conn->query($sql);
-        if ($result) {
-            return $result;
+        $sql = "UPDATE `tbl_product` SET `prod_name`='$name',`link`='$link',`prod_available`='$select' WHERE `id`='$hidden'";
+        // echo $sql;
+        // exit();
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>
+            alert('Category Updated successfully')
+            window.location='../category.php'</script>";
         } else {
-            return $result;
+            echo "Error updating record: " . $conn->error;
+        }
+    }
+
+    function deletecategory($id, $conn)
+    {
+        $sql = "DELETE FROM tbl_product WHERE id='" . $id . "'";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>
+            alert('Category Deleted successfully')
+            window.location='../category.php'</script>";
+        } else {
+            echo "Error deleting record: " . $conn->error;
         }
     }
 
 
-    //Add Product
-    public function addpdt($conn, $name, $link)
+
+
+    function addproduct($name, $select, $link, $conn)
     {
-        $sql = "INSERT INTO `tbl_product`(`prod_parent_id`, `prod_name`, `link`, `prod_available`, `prod_launch_date`) VALUES (1,'" . name . "','" . $link . "',1,NOW())";
-        $result = $conn->query($sql);
-        return $result;
+        $sql = "INSERT INTO tbl_product (prod_parent_id, prod_name, link, prod_available, prod_launch_date)
+        VALUES ('" . $select . "', '" . $name . "', '" . $link . "', 1, NOW())";
+
+        if ($conn->query($sql) === true) {
+            $last_id = $conn->insert_id;
+            return $last_id;
+        }
+    }
+
+
+
+
+    function addfinalproduct($row, $price1, $price2, $conn, $sku, $json_arr)
+    {
+        $sql = "INSERT INTO tbl_product_description (prod_id, `description`, mon_price, annual_price, sku)
+    VALUES ('" . $row . "', '" . $json_arr . "', '" . $price1 . "', '" . $price2 . "', '" . $sku . "')";
+
+        if ($conn->query($sql) === true) {
+            echo "<script>
+                alert('Product inserted successfully')
+                window.location='addProduct.php'</script>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
 }
 
