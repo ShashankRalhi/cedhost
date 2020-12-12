@@ -1,8 +1,14 @@
 <?php
-require 'header.php';
-include('admindbcon.php');
-include("pdtclass.php");
 
+
+require 'header.php';
+
+include("admindbcon.php");
+include("productclass.php");
+// echo "hii";
+$dbconn = new admindbcon();
+
+$obj = new productclass();
 ?>
 
 
@@ -61,9 +67,8 @@ include("pdtclass.php");
 
                         <?php
 
-                        $prod = new pdtclass();
-                        $dbconnect = new admindbcon();
-                        $row1 = $prod->viewproduct($dbconnect->conn);
+
+                        $row1 = $obj->viewproduct($dbconn->conn);
                         if (isset($row1)) {
                             foreach ($row1 as $key => $row) {
 
@@ -77,7 +82,7 @@ include("pdtclass.php");
                                         </th>
                                         <td class="budget">
                                             <?php $id12 = $row['prod_parent_id'];
-                                            $p = $prod->viewparent($dbconnect->conn, $id12);
+                                            $p = $obj->viewparent($dbconn->conn, $id12);
                                             $row11 = $p->fetch_assoc();
 
 
@@ -167,7 +172,7 @@ include("pdtclass.php");
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                     <a href="" class="btn btn-default btn-rounded mb-2 ml-2" data-toggle="modal" data-target="#modalForm<?php echo $row['id']; ?>">Edit</a>
                                                     <?php
-                                                    echo "<a onClick=\"javascript: return confirm('Please confirm deletion');\" class='btn btn-warning btn-rounded mb-2 ml-2' href='Productmid.php?id15=" . $row['prod_id'] . "'>Delete</a>";
+                                                    echo "<a onClick=\"javascript: return confirm('Please confirm deletion');\" class='btn btn-warning btn-rounded mb-2 ml-2' href='class/logic.php?id15=" . $row['prod_id'] . "'>Delete</a>";
                                                     ?>
                                                 </div>
                                             </div>
@@ -187,7 +192,7 @@ include("pdtclass.php");
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="Productmid.php" method="post">
+                                                <form action="logic.php" method="post">
                                                     <div class="modal-body mx-3">
                                                         <div class="md-form mb-5">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-email">Parent Name</label>
