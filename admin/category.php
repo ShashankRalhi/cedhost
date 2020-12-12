@@ -144,26 +144,19 @@ $obj = new productclass();
                 </td>
                 <td>
                   <?php echo $row['prod_name']; ?>
-
                 </td>
                 <td>
-
                   <?php
                   if ($row['link'] == "") {
                     $link = "Null";
                   } else {
                     $link = $row['link'];
                   }
-
                   echo $link;
-
                   ?>
-
                 </td>
                 <td>
-
                   <?php echo $row['prod_available']; ?>
-
                 </td>
                 <td>
                   <?php echo $row['prod_launch_date']; ?>

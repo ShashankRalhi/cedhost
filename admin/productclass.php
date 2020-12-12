@@ -10,7 +10,7 @@ class productclass
         $result = $conn->query($sql);
         echo "<script>
             alert('Category Updated successfully')
-            window.location='../category.php'</script>";
+            window.location='category.php'</script>";
         // return $result;
         // // if ($conn->multi_query($sql) === TRUE) {
         //     echo "New records created successfully";

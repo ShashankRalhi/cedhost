@@ -16,7 +16,25 @@ class user
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
+  } //Fetch Category
+  function fetchcategory($conn)
+  {
+    $row1 = array();
+    $sql = "SELECT * FROM `tbl_product`";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+
+      while ($row = $result->fetch_assoc()) {
+        array_push($row1, $row);
+      }
+      return $row1;
+    } else {
+      echo "0 results";
+    }
   }
+
 
   //For Login
   public function fetch($conn, $email, $password1)
