@@ -45,8 +45,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<?php
 	include 'header.php';
-
-
 	?>
 	<!---login--->
 	<div class="content">
@@ -106,11 +104,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>login information</h3>
 					<div>
 						<span>Password<label>*</label></span>
-						<input type="password" name="password" id="pass" required onblur="this.value=removeSpaces(this.value);" maxlength="16" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+						<input type="password" name="pass1" id="pass" required onblur="this.value=removeSpaces(this.value);" maxlength="16" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
 					</div>
 					<div>
 						<span>Confirm Password<label>*</label></span>
-						<input type="password" name="confirmpassword" id="cpass" required onblur="this.value=removeSpaces(this.value);" maxlength="16" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+						<input type="password" name="pass2" id="cpass" required onblur="this.value=removeSpaces(this.value);" maxlength="16" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
 					</div>
 				</div>
 

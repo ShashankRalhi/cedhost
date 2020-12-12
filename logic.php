@@ -19,24 +19,22 @@ if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $sques = $_POST['squestion'];
     $sans = $_POST['sanswer'];
-    $pws1 = $_POST['pass1'];
+    $pass = $_POST['pass1'];
     $pws2 = $_POST['pass2'];
 
     if ($name == null && $mobile == null && $email == null && $sques == null && $sans == null && $pws1 == null && $pws2 == null) {
         echo "<script>alert('please complete all the fields');</script>";
     } else {
-        if ($pws1 == $pws2) {
-
+        if ($pass == $pws2) {
             $_SESSION['vname'] = $name;
             $_SESSION['vemail'] = $email;
             $_SESSION['vmobile'] = $mobile;
-
             $pass = md5($pws1);
-
             $sql = $obj->insert($dbconn->conn, $name, $email, $mobile, $sques, $sans, $pass);
             header("location:verification.php");
         } else {
-            header("location=account.php");
+            echo "<script>alert('Password not');</script>";
+            header("location:'account.php'");
         }
     }
 }
@@ -57,6 +55,8 @@ if (isset($_POST['register'])) {
 //             header("location:login.php");
 //         }
 //     }
+
+
 
 
 //VERIFY Email/Mobile

@@ -172,7 +172,7 @@ $obj = new productclass();
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                     <a href="" class="btn btn-default btn-rounded mb-2 ml-2" data-toggle="modal" data-target="#modalForm<?php echo $row['id']; ?>">Edit</a>
                                                     <?php
-                                                    echo "<a onClick=\"javascript: return confirm('Please confirm deletion');\" class='btn btn-warning btn-rounded mb-2 ml-2' href='class/logic.php?id15=" . $row['prod_id'] . "'>Delete</a>";
+                                                    echo "<a onClick=\"javascript: return confirm('Please confirm deletion');\" class='btn btn-warning btn-rounded mb-2 ml-2' href='logic.php?id15=" . $row['prod_id'] . "'>Delete</a>";
                                                     ?>
                                                 </div>
                                             </div>

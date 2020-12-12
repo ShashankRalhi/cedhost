@@ -55,7 +55,7 @@ if (isset($_POST['submit10'])) {
     $price2 = $_POST['price2'];
 
     $sku = $_POST['sku'];
-    $webspace = $_POST['webspace'];
+    $webspace = $_POST['space'];
     $band = $_POST['band'];
 
     $free = $_POST['free'];

@@ -22,19 +22,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="js/bootstrap.js">
 		< script >
 	</script>
-	<!---fonts-->
-	<link href='//fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-	<!---fonts-->
-	<!--script-->
-	<link rel="stylesheet" href="css/swipebox.css">
+	<link href='//fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css' />
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/swipebox.css" />
 	<script src="js/jquery.swipebox.min.js"></script>
 	<script type="text/javascript">
 		jQuery(function($) {
 			$(".swipebox").swipebox();
 		});
 	</script>
-	<!--script-->
 </head>
 
 <body>
