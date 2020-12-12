@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include 'Dbcon.php';
 $obj = new Dbcon();
 $sql = $obj->__construct();
