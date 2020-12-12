@@ -55,11 +55,7 @@ if (isset($_POST['categorysubmit1'])) {
     $select = isset($_POST['is_available']) ? $_POST['is_available'] : "";
     $link = isset($_POST['link1']) ? $_POST['link1'] : "";
     $hidden = $_POST['hidden'];
-
     echo $hidden;
-
-
-
     $row = $obj->updatecategory($name, $select, $link, $hidden, $dbconn->conn);
     //  header('location:category.php');
 
@@ -69,13 +65,8 @@ if (isset($_POST['categorysubmit1'])) {
 }
 
 if (isset($_GET['id5'])) {
-
-
     $id = $_GET['id5'];
-
     echo $id;
-
-
     $row = $obj->deletecategory($id, $dbconn->conn);
 }
 

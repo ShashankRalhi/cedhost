@@ -171,7 +171,7 @@ $obj = new productclass();
                 <td>
                   <div class="text-center">
                     <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" input-type="hidden" data-target="#modalForm<?php echo $row['id']; ?>">Edit</a>
-                    <a href="class/logic.php?id5=<?php echo $row['id'] ?>" class="btn btn-warning btn-rounded mb-4">Delete</a>
+                    <a href="logic.php?id5=<?php echo $row['id'] ?>" class="btn btn-warning btn-rounded mb-4">Delete</a>
                   </div>
                 </td>
               </tr>
@@ -185,7 +185,7 @@ $obj = new productclass();
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <form action="class/logic.php" method="POST">
+                    <form action="logic.php" method="POST">
                       <div class="modal-body mx-3">
                         <div class="md-form mb-5">
                           <label data-error="wrong" data-success="right" for="defaultForm-email">Parent Name</label>

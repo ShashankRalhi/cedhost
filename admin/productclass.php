@@ -68,6 +68,8 @@ class productclass
 
 
 
+
+
     function updatecategory($name, $select, $link, $hidden, $conn)
     {
         $sql = "UPDATE `tbl_product` SET `prod_name`='$name',`link`='$link',`prod_available`='$select' WHERE `id`='$hidden'";
@@ -76,11 +78,14 @@ class productclass
         if ($conn->query($sql) === TRUE) {
             echo "<script>
             alert('Category Updated successfully')
-            window.location='../category.php'</script>";
+            window.location='category.php'</script>";
         } else {
             echo "Error updating record: " . $conn->error;
         }
     }
+
+
+
 
     function deletecategory($id, $conn)
     {
@@ -89,7 +94,7 @@ class productclass
         if ($conn->query($sql) === TRUE) {
             echo "<script>
             alert('Category Deleted successfully')
-            window.location='../category.php'</script>";
+            window.location='category.php'</script>";
         } else {
             echo "Error deleting record: " . $conn->error;
         }
@@ -108,8 +113,6 @@ class productclass
             return $last_id;
         }
     }
-
-
 
 
     function addfinalproduct($row, $price1, $price2, $conn, $sku, $json_arr)
