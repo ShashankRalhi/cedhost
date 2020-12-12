@@ -58,7 +58,7 @@ $pdt = new productclass();
 						<li><a href="pricing.php">Pricing</a></li>
 						<li><a href="blog.php">Blog</a></li>
 						<li><a href="contact.php">Contact</a></li>
-						<li><a href="cart.php"> &#x1f6d2;cart</a></li>
+						<li><a href="cart.php">Cart&#x1f6d2;</a></li>
 						<?php
 						if (isset($_SESSION['username'])) {
 						?>

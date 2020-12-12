@@ -481,7 +481,7 @@ $obj = new productclass();
                     </label>
                     <div id="cid_20" class="form-input-wide jf-required" data-layout="half">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="text" id="input_20" name="mail" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_20 sublabel_input_20" required="" />
+                            <input type="text" id="input_20" name="mail" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_20 sublabel_input_20" required />
                             <label class="form-sub-label" for="input_20" id="sublabel_input_20" style="min-height:13px" aria-hidden="false"> Enter Number of mailbox will be provided, enter 0 if none </label>
                         </span>
                     </div>
@@ -489,8 +489,7 @@ $obj = new productclass();
                 <li class="form-line" data-type="control_button" id="id_2">
                     <div id="cid_2" class="form-input-wide" data-layout="full">
                         <div data-align="auto" class="form-buttons-wrapper form-buttons-auto jsTest-button-wrapperField">
-                            <input id="input_2" type="submit" name="submit10" value="Add Product" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="" required />
-
+                            <input id="input_2" type="submit" name="submit10" value="Add Product" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" required />
                         </div>
                     </div>
                 </li>
