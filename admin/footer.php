@@ -24,28 +24,31 @@
           </div>
         </div>
       </footer>
-    </div>
-  </div>
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <!-- Optional JS -->
-  <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
-  <!-- Argon JS -->
-  <script src="assets/js/argon.js?v=1.2.0"></script>
-  <!-- data table cdn link -->
+      </div>
+      </div>
+      <!-- Argon Scripts -->
+      <!-- Core -->
+      <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+      <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+      <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/js-cookie/js.cookie.js"></script>
+      <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+      <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+      <!-- Optional JS -->
+      <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+      <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
+      <!-- Argon JS -->
+      <script src="assets/js/argon.js?v=1.2.0"></script>
+      <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+      <script src="script.js"></script>
+      <!-- data table cdn link -->
 
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"> -->
 
-<!-- data table cdn link end -->
-  <!-- <script src="adminScript.js"></script> -->
-</body>
+      <!-- data table cdn link end -->
+      <!-- <script src="adminScript.js"></script> -->
+      </body>
 
-</html>
+      </html>
