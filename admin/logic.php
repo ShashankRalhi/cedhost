@@ -6,6 +6,8 @@ $dbconn = new admindbcon();
 
 $obj = new productclass();
 
+
+//ADD CATEGORY
 if (isset($_POST['categorysubmit'])) {
     $cat_name = $_POST['cname'];
     $cat_link = $_POST['link'];
@@ -18,38 +20,7 @@ if (isset($_POST['categorysubmit'])) {
 }
 
 
-//     if(isset($_POST['categorysubmit1']))
-//     {
-//     $cat_name1 = $_POST['cname1'];
-//     $cat_link1 = $_POST['link1'];
-//     $is_available=$_POST['is_available'];
-//     $id=$_POST['hidden'];
-
-//     //echo $cat_link1;
-//     //echo $cat_name1;
-
-
-
-//         $sql = $obj->update($dbconn->conn, $cat_name1, $cat_link1,$is_available,$id);
-//         echo $sql;
-
-// }
-
-
-
-// if (isset($_POST['categorysubmit1'])) {
-
-
-
-
-
-
-
-
-
-
-
-
+//UPDATE CATEGORY
 if (isset($_POST['categorysubmit1'])) {
     $name = isset($_POST['cname1']) ? $_POST['cname1'] : "";
     $select = isset($_POST['is_available']) ? $_POST['is_available'] : "";
@@ -64,6 +35,8 @@ if (isset($_POST['categorysubmit1'])) {
 
 }
 
+
+//DELETE CATEGORY
 if (isset($_GET['id5'])) {
     $id = $_GET['id5'];
     echo $id;
@@ -72,9 +45,7 @@ if (isset($_GET['id5'])) {
 
 
 
-
-
-
+//ADD PRODUCT
 if (isset($_POST['submit10'])) {
 
     $name = isset($_POST['name']) ? $_POST['name'] : "";
@@ -91,10 +62,7 @@ if (isset($_POST['submit10'])) {
     $lang = $_POST['lang'];
     $mail = $_POST['mail'];
 
-
-
     $row = $obj->addproduct($name, $select, $link, $dbconn->conn);
-
     $arr = array(
         "webspace" => $webspace,
         "band" => $band,
@@ -103,9 +71,7 @@ if (isset($_POST['submit10'])) {
         "mail" => $mail
 
     );
-
     $json_arr = json_encode($arr);
-
 
     $row1 = $obj->addfinalproduct($row, $price1, $price2, $dbconn->conn, $sku, $json_arr);
 }
@@ -113,7 +79,7 @@ if (isset($_POST['submit10'])) {
 
 
 
-
+//UPDATE PRODUCT
 if (isset($_POST['updateproduct'])) {
 
     $updatename = isset($_POST['updatename']) ? $_POST['updatename'] : "";
@@ -132,12 +98,7 @@ if (isset($_POST['updateproduct'])) {
     $updatelang = $_POST['updatelang'];
     $updatemail = $_POST['updatemail'];
 
-
-
     $row = $obj->updateproduct($updatename, $updateavailable, $link, $hidden, $dbconn->conn);
-
-
-
 
     $arr = array(
         "webspace" => $updatewebspace,
@@ -145,20 +106,16 @@ if (isset($_POST['updateproduct'])) {
         "free" => $updatefree,
         "lang" => $updatelang,
         "mail" => $updatemail
-
-
-
     );
 
     $json_arr = json_encode($arr);
-
-
     $row1 = $obj->updatefinalproduct($hidden, $updatemonthly, $updateannual, $dbconn->conn, $updatesku, $json_arr);
 }
 
+
+//DELETE PRODUCT
 if (isset($_GET['id15'])) {
     $id = $_GET['id15'];
-
     $row = $obj->deleteproduct($id, $dbconn->conn);
 }
 ?>

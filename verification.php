@@ -89,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</tr>
 			<tr>
 				<td>
-					<input type="submit" value="Verify" name="vemail" id="vemail" class="a">
+					<input type="submit" value="Verify" name="verify" id="vemail" class="a">
 				</td>
 			</tr>
 		</table>

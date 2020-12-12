@@ -3,21 +3,16 @@
 
 class productclass
 {
-    //FORS INSERT PRODUCT IN DB
+    //INSERT CATEGORY IN DB
     public function insert($conn, $cat_name, $cat_link)
     {
         $sql = "INSERT INTO `tbl_product`(`prod_parent_id`, `prod_name`, `link`, `prod_available`, `prod_launch_date`) VALUES (1,'" . $cat_name . "','" . $cat_link . "',1,NOW())";
         $result = $conn->query($sql);
         echo "<script>
-            alert('Category Updated successfully')
+            alert('CATEGORY INSERTED SUCCESSFULLY')
             window.location='category.php'</script>";
-        // return $result;
-        // // if ($conn->multi_query($sql) === TRUE) {
-        //     echo "New records created successfully";
-        // } else {
-        //     echo "Error: " . $sql . "<br>" . $conn->error;
-        // }
     }
+
 
     //Fetch Category
     public function fetchcategory($conn)
@@ -39,8 +34,7 @@ class productclass
     }
 
 
-
-
+    //UPDATE CATEGORY
     function updatecategory($name, $select, $link, $hidden, $conn)
     {
         $sql = "UPDATE `tbl_product` SET `prod_name`='$name',`link`='$link',`prod_available`='$select' WHERE `id`='$hidden'";
@@ -56,8 +50,7 @@ class productclass
     }
 
 
-
-
+    //DELETE CATEGORY
     function deletecategory($id, $conn)
     {
         $sql = "DELETE FROM tbl_product WHERE id='" . $id . "'";
@@ -72,8 +65,7 @@ class productclass
     }
 
 
-
-
+    //ADD PRODUCT
     function addproduct($name, $select, $link, $conn)
     {
         $sql = "INSERT INTO tbl_product (prod_parent_id, prod_name, link, prod_available, prod_launch_date)
@@ -84,6 +76,7 @@ class productclass
             return $last_id;
         }
     }
+
 
 
     function addfinalproduct($row, $price1, $price2, $conn, $sku, $json_arr)
@@ -120,6 +113,8 @@ class productclass
         }
     }
 
+
+
     function viewparent($conn, $id12)
     {
         $row11 = array();
@@ -127,7 +122,6 @@ class productclass
         $result = $conn->query($sql);
         return $result;
     }
-
 
 
 
@@ -144,6 +138,8 @@ class productclass
         }
     }
 
+
+
     function updatefinalproduct($hidden, $updatemonthly, $updateannual, $conn, $updatesku, $json_arr)
     {
 
@@ -156,6 +152,8 @@ class productclass
         window.location='viewproduct.php'</script>";
         }
     }
+
+
 
     function deleteproduct($id, $conn)
     {
