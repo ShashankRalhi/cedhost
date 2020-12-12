@@ -1,7 +1,7 @@
 <?php
 require 'header.php';
 include('admindbcon.php');
-include("productclass.php");
+include("pdtclass.php");
 
 ?>
 
@@ -61,7 +61,7 @@ include("productclass.php");
 
                         <?php
 
-                        $prod = new productclass();
+                        $prod = new pdtclass();
                         $dbconnect = new admindbcon();
                         $row1 = $prod->viewproduct($dbconnect->conn);
                         if (isset($row1)) {
