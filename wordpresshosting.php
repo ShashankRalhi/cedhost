@@ -93,7 +93,10 @@
 									<h5>$259 <span class="month">per month</span></h5>
 									<h6>Unlimited Domains</h6>
 									<ul>
-										<li><strong>Unlimited</strong> Disk Space</li>
+								
+</body>
+
+</html>		<li><strong>Unlimited</strong> Disk Space</li>
 										<li><strong>Unlimited</strong> Data Transfer</li>
 										<li><strong>Unlimited</strong> Email Accounts</li>
 										<li><strong>Includes </strong> Global CDN</li>
@@ -153,10 +156,10 @@
 									<h6>3 Domains</h6>
 									<ul>
 										<li><strong>Unlimited</strong> Disk Space</li>
-										<li><strong>Unlimited</strong> Data Transfer</li>
-										<li><strong>Unlimited</strong> Email Accounts</li>
-										<li><strong>Includes </strong> Global CDN</li>
-										<li><strong>High Performance</strong> Servers</li>
+								
+</body>
+
+</html>		<li><strong>High Performance</strong> Servers</li>
 										<li><strong>location</strong> : <img src="images/us.png"></li>
 									</ul>
 								</div>
@@ -177,7 +180,10 @@
 										<li><strong>High Performance</strong> Servers</li>
 										<li><strong>location</strong> : <img src="images/us.png"></li>
 									</ul>
-								</div>
+								
+</body>
+
+</html></div>
 								<a href="#" class="us-button">buy now</a>
 							</div>
 							<div class="clearfix"></div>
@@ -230,9 +236,9 @@
 					<h4>Expert Web Design</h4>
 					<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
 				</div>
-				<div class="col-md-4 features-grid">
-					<img src="images/f5.png">
-					<h4>Expert Web Design</h4>
+</body>
+
+</html>Web Design</h4>
 					<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
 				</div>
 				<div class="col-md-4 features-grid">
