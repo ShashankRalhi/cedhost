@@ -83,7 +83,6 @@ $(document).ready(function () {
             $(this).css('border', 'solid 3px red');
             count1 = 0;
         } else {
-
             $("#prodCategory").hide();
             $(this).css('border', 'solid 3px green');
             count1 = 1;
