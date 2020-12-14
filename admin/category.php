@@ -121,14 +121,7 @@ $obj = new productclass();
         $row1 = $obj->fetchcategory($dbconn->conn);
         if (isset($row1)) {
           foreach ($row1 as $key => $row) {
-
             if ($row['id'] != 1) {
-
-
-
-
-
-
         ?>
               <tr>
                 <th scope="row">
@@ -147,10 +140,10 @@ $obj = new productclass();
                 </td>
                 <td>
                   <?php
-                  if ($row['link'] == "") {
+                  if ($row['html'] == "") {
                     $link = "Null";
                   } else {
-                    $link = $row['link'];
+                    $link = $row['html'];
                   }
                   echo $link;
                   ?>

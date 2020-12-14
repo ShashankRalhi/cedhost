@@ -96,7 +96,7 @@ $obj = new productclass();
                                             <?php echo $row['prod_name'] ?>
                                         <td>
 
-                                            <?php echo $row['link'] ?>
+                                            <?php echo $row['html'] ?>
 
                                         </td>
                                         <td>
@@ -209,7 +209,7 @@ $obj = new productclass();
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatelink" value="<?php echo $row['link'] ?>">
+                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatelink" value="<?php echo $row['html'] ?>">
 
                                                         </div>
 

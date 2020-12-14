@@ -1,8 +1,8 @@
 <?php
 session_start();
-// if ($_SESSION['admindata'] == "") {
-//     header('location: ../index.php');
-// }
+if ($_SESSION['admin'] == 0) {
+  header('location: ../login.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -416,10 +416,6 @@ session_start();
                     if ($_SESSION['admin'] == 1) {
                     ?>
                       WELCOME ADMIN
-                    <?php
-                    } else {
-                    ?>
-                      WELCOME
                     <?php
                     }
                     ?>

@@ -6,7 +6,7 @@ class productclass
     //INSERT CATEGORY IN DB
     public function insert($conn, $cat_name, $cat_link)
     {
-        $sql = "INSERT INTO `tbl_product`(`prod_parent_id`, `prod_name`, `link`, `prod_available`, `prod_launch_date`) VALUES (1,'" . $cat_name . "','" . $cat_link . "',1,NOW())";
+        $sql = "INSERT INTO `tbl_product`(`prod_parent_id`, `prod_name`, `html`, `prod_available`, `prod_launch_date`) VALUES (1,'" . $cat_name . "','" . $cat_link . "',1,NOW())";
         $result = $conn->query($sql);
         echo "<script>
             alert('CATEGORY INSERTED SUCCESSFULLY')
@@ -37,7 +37,7 @@ class productclass
     //UPDATE CATEGORY
     function updatecategory($name, $select, $link, $hidden, $conn)
     {
-        $sql = "UPDATE `tbl_product` SET `prod_name`='$name',`link`='$link',`prod_available`='$select' WHERE `id`='$hidden'";
+        $sql = "UPDATE `tbl_product` SET `prod_name`='$name',`html`='$link',`prod_available`='$select' WHERE `id`='$hidden'";
         // echo $sql;
         // exit();
         if ($conn->query($sql) === TRUE) {
@@ -68,7 +68,7 @@ class productclass
     //ADD PRODUCT
     function addproduct($name, $select, $link, $conn)
     {
-        $sql = "INSERT INTO tbl_product (prod_parent_id, prod_name, link, prod_available, prod_launch_date)
+        $sql = "INSERT INTO tbl_product (prod_parent_id, prod_name, html, prod_available, prod_launch_date)
         VALUES ('" . $select . "', '" . $name . "', '" . $link . "', 1, NOW())";
 
         if ($conn->query($sql) === true) {
@@ -128,7 +128,7 @@ class productclass
     function updateproduct($updatename, $updateavailable, $link, $hidden, $conn)
     {
 
-        $sql = "UPDATE tbl_product SET prod_name='" . $updatename . "',link='" . $link . "',prod_available='" . $updateavailable . "' WHERE id='" . $hidden . "'";
+        $sql = "UPDATE tbl_product SET prod_name='" . $updatename . "', html='" . $link . "', prod_available='" . $updateavailable . "' WHERE id='" . $hidden . "'";
 
         if ($conn->query($sql) === TRUE) {
 

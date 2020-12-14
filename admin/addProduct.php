@@ -170,7 +170,9 @@ $obj = new productclass();
                         </form>
                     </div>
                     <!-- Footer -->
-
-
-
                     <?php include('footer.php'); ?>
+
+
+                    <script>
+
+                    </script>
