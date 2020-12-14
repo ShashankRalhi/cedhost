@@ -66,7 +66,7 @@ $obj = new productclass();
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-bullet-list-67 text-default"></i></i></span>
                   </div>
-                  <input class="form-control" name="cname" placeholder="Category Name" type="text">
+                  <input class="form-control" name="cname" placeholder="Category Name" type="text" pattern="^[ A-Za-z0-9_@./#$&+-]*$">
                 </div>
               </div>
               <div class="form-group">

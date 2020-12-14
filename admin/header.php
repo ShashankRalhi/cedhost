@@ -34,7 +34,7 @@ if ($_SESSION['admin'] != 1) {
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
-        <a class="navbar-brand" href="javascript:void(0)" style="color:#e7663f;">
+        <a class="navbar-brand" href="javascript:void(0)" style="color:#e7663f;font-weight:bold; font-size:xx-large;">
           CED <span style="color:#585CA7;">HOSTING</span>
         </a>
       </div>
