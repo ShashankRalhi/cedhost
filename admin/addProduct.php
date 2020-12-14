@@ -100,14 +100,14 @@ $obj = new productclass();
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-username">Enter Monthly Price *</label>
-                                            <input type="text" id="proprice" name="price1" class="form-control" placeholder="ex: 23" required>
+                                            <input type="text" id="proprice" name="price1" class="form-control" placeholder="ex: 23" maxlength="15" required>
                                             <p id="prodprice" style="color:red;"></p>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-email">Enter Annual Price *</label>
-                                            <input type="text" id="proannualprice" name="price2" class="form-control" placeholder="ex: 23" required>
+                                            <input type="text" id="proannualprice" name="price2" class="form-control" placeholder="ex: 23" maxlength="15" required>
                                             <p id="prodallprice" style="color:red;"></p>
                                         </div>
                                     </div>
@@ -130,7 +130,7 @@ $obj = new productclass();
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-username">Web Space(in GB) *</label>
-                                            <input type="text" id="proweb" name="webspace" class="form-control" placeholder="Web Space(in GB)" required>
+                                            <input type="text" id="proweb" name="webspace" class="form-control" placeholder="Web Space(in GB)" maxlength="5" required>
                                             <h6 class="heading-small text-muted mb-4">Enter 0.5 for 512 MB</h6>
                                             <p id="prodweb" style="color:red;"></p>
                                         </div>
@@ -138,7 +138,7 @@ $obj = new productclass();
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-email">Bandwidth (in GB) *</label>
-                                            <input type="text" id="proband" name="band" class="form-control" placeholder="Bandwidth (in GB)" required>
+                                            <input type="text" id="proband" name="band" class="form-control" placeholder="Bandwidth (in GB)" maxlength="5" required>
                                             <h6 class="heading-small text-muted mb-4">Enter 0.5 for 512 MB</h6>
                                             <p id="prodband" style="color:red;"></p>
                                         </div>
