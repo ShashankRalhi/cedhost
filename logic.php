@@ -22,6 +22,7 @@ if (isset($_POST['register'])) {
     $pass = $_POST['pass1'];
     $pws2 = $_POST['pass2'];
 
+
     if ($name == null && $mobile == null && $email == null && $sques == null && $sans == null && $pws1 == null && $pws2 == null) {
         echo "<script>alert('please complete all the fields');</script>";
     } else {

@@ -5,6 +5,10 @@ $obj = new Dbcon();
 $sql = $obj->__construct();
 include 'productclass.php';
 $pdt = new productclass();
+
+// if ($_SESSION['admin'] != 0) {
+// 	header('location: login.php');
+// }
 ?>
 <!DOCTYPE HTML>
 <html>

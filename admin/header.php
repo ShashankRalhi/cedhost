@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['admin'] == 0) {
+if ($_SESSION['admin'] != 1) {
   header('location: ../login.php');
 }
 ?>
