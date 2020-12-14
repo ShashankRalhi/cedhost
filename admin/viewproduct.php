@@ -209,7 +209,7 @@ $obj = new productclass();
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatelink" value="<?php echo $row['html'] ?>">
+                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatelink" value="<?php echo $row['link'] ?>">
 
                                                         </div>
 

@@ -1,4 +1,3 @@
-<?php include 'header.php'; ?>
 <!---singleblog--->
 <div class="content">
 	<div class="linux-section">
@@ -247,9 +246,4 @@
 	</div>
 </div>
 <!-- Wordpress Features -->
-<?php include 'footer.php'; ?>
 
-
-</body>
-
-</html>

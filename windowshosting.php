@@ -1,4 +1,3 @@
-<?php include 'header.php'; ?>
 <!---singleblog--->
 <div class="content">
 	<div class="linux-section">
@@ -276,7 +275,6 @@
 	</div>
 
 </div>
-<?php include 'footer.php'; ?>
 
 
 </body>

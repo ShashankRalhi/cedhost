@@ -99,7 +99,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											if ($row['id'] != 1) {
 									?>
-												<li><a href="<?php echo $row['html']; ?>"><?php echo $row['prod_name']; ?></a></li>
+												<li><a href="catpage.php?id=<?php echo $row['id']; ?>"><?php echo $row['prod_name']; ?></a></li>
 									<?php
 											}
 										}

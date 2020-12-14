@@ -96,40 +96,31 @@ $(document).ready(function () {
             $("#prodname").html("*Select Product Name");
             $("#prodname").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count2 = 0;
         }
         else if (!$proname.match(/^[a-zA-Z-]+([0-9]+)*$/)) {
             $("#prodname").html("*Select Valid Product Name");
             $("#prodname").show();
-
             $(this).css('border', 'solid 3px red');
             count2 = 0;
         }
-
         else {
-
             $("#prodname").hide();
             $(this).css('border', 'solid 3px green');
             count2 = 1;
         }
-
         buttonShow();
-
-
-
     });
+
+
 
     $("#proprice").focusout(function () {
         $proprice = $("#proprice").val();
-
-
         if ($proprice == "") {
             $("#prodprice").html("*Select Product price");
             $("#prodprice").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count3 = 0;
         }
@@ -141,19 +132,14 @@ $(document).ready(function () {
             $(this).css('border', 'solid 3px red');
             count3 = 0;
         }
-
-
         else {
-
             $("#prodprice").hide();
             $(this).css('border', 'solid 3px green');
             count3 = 1;
         }
         buttonShow();
-
-
-
     });
+
 
 
     $("#proannualprice").focusout(function () {
@@ -162,7 +148,6 @@ $(document).ready(function () {
             $("#prodallprice").html("*Select Product Annual price");
             $("#prodallprice").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count4 = 0;
         }
@@ -170,22 +155,15 @@ $(document).ready(function () {
             $("#prodallprice").html("*Select Valid Product Annual price");
             $("#prodallprice").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count4 = 0;
         }
-
         else {
-
             $("#prodallprice").hide();
             $(this).css('border', 'solid 3px green');
             count4 = 1;
         }
-
         buttonShow();
-
-
-
     });
 
 
@@ -195,7 +173,6 @@ $(document).ready(function () {
             $("#prodweb").html("*Select Web Space in G.B");
             $("#prodweb").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count5 = 0;
         }
@@ -203,7 +180,6 @@ $(document).ready(function () {
             $("#prodweb").html("*Select Valid Web Space");
             $("#prodweb").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count5 = 0;
         }
@@ -211,25 +187,17 @@ $(document).ready(function () {
             $("#prodweb").html("*Select Valid Web Space");
             $("#prodweb").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count5 = 0;
         }
-
-
-
         else {
-
             $("#prodweb").hide();
             $(this).css('border', 'solid 3px green');
             count5 = 1;
         }
-
         buttonShow();
-
-
-
     });
+
 
 
     $("#proband").focusout(function () {
@@ -238,7 +206,6 @@ $(document).ready(function () {
             $("#prodband").html("*Select band Space in G.B");
             $("#prodband").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count6 = 0;
         }
@@ -246,7 +213,6 @@ $(document).ready(function () {
             $("#prodband").html("*Select Valid band Space");
             $("#prodband").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count6 = 0;
         }
@@ -254,24 +220,18 @@ $(document).ready(function () {
             $("#prodband").html("*Select Valid band Space");
             $("#prodband").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count6 = 0;
         }
-
-
-
         else {
-
             $("#prodband").hide();
             $(this).css('border', 'solid 3px green');
             count6 = 1;
         }
         buttonShow();
-
-
-
     });
+
+
 
     $("#profree").focusout(function () {
         $profree = $("#profree").val();
