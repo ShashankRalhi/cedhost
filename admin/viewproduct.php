@@ -66,30 +66,19 @@ $obj = new productclass();
                         </thead>
 
                         <?php
-
-
                         $row1 = $obj->viewproduct($dbconn->conn);
                         if (isset($row1)) {
                             foreach ($row1 as $key => $row) {
-
-
-
                         ?>
                                 <tbody class="list">
                                     <tr>
                                         <th scope="row"><?php echo $row['prod_id']; ?>
-
                                         </th>
                                         <td class="budget">
                                             <?php $id12 = $row['prod_parent_id'];
                                             $p = $obj->viewparent($dbconn->conn, $id12);
                                             $row11 = $p->fetch_assoc();
-
-
                                             echo $row11['prod_name'];
-
-
-
                                             ?>
                                         </td>
                                         <td>
@@ -196,20 +185,20 @@ $obj = new productclass();
                                                     <div class="modal-body mx-3">
                                                         <div class="md-form mb-5">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-email">Parent Name</label>
-                                                            <input type="text" id="defaultForm-email" class="form-control validate" value="<?php echo $row11['prod_name'] ?>" readonly name="updateparent">
+                                                            <input type="text" id="" class="form-control validate" value="<?php echo $row11['prod_name'] ?>" readonly name="updateparent">
                                                             <input type="hidden" name="hidden" value="<?php echo $row['prod_id'] ?>">
                                                         </div>
 
                                                         <div class="md-form mb-5">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-email">Product Name</label>
-                                                            <input type="text" id="defaultForm-email" class="form-control validate" value="<?php echo $row['prod_name'] ?>" name="updatename" required>
+                                                            <input type="text" id="proname" class="form-control validate" value="<?php echo $row['prod_name'] ?>" name="updatename" required>
 
                                                         </div>
 
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatelink" value="<?php echo $row['link'] ?>">
+                                                            <input type="text" id="prourl" class="form-control validate" name="updatelink" value="<?php echo $row['html'] ?>">
 
                                                         </div>
 
@@ -247,53 +236,49 @@ $obj = new productclass();
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Monthly Price</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatemonthly" value="<?php echo $row['mon_price']; ?>">
+                                                            <input type="text" id="proprice" class="form-control validate" name="updatemonthly" value="<?php echo $row['mon_price']; ?>">
 
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Annual Price</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updateannual" value="<?php echo $row['annual_price']; ?>">
+                                                            <input type="text" id="proannualprice" class="form-control validate" name="updateannual" value="<?php echo $row['annual_price']; ?>">
 
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">SKU</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatesku" value="<?php echo $row['sku']; ?>">
-
+                                                            <input type="text" id="prosku" class="form-control validate" name="updatesku" value="<?php echo $row['sku']; ?>">
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Webspace</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatewebspace" value="<?php echo $arr['webspace']; ?>">
+                                                            <input type="text" id="proweb" class="form-control validate" name="updatewebspace" value="<?php echo $arr['webspace']; ?>">
 
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Band Width</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updateband" value="<?php echo $arr['band']; ?>">
+                                                            <input type="text" id="proband" class="form-control validate" name="updateband" value="<?php echo $arr['band']; ?>">
 
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Free Domain</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatefree" value="<?php echo $arr['free']; ?>">
+                                                            <input type="text" id="profree" class="form-control validate" name="updatefree" value="<?php echo $arr['free']; ?>">
 
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Language</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatelang" value="<?php echo $arr['lang']; ?>">
+                                                            <input type="text" id="prolang" class="form-control validate" name="updatelang" value="<?php echo $arr['lang']; ?>">
 
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Mail Box</label>
-                                                            <input type="text" id="defaultForm-pass" class="form-control validate" name="updatemail" value="<?php echo $arr['mail']; ?>">
-
+                                                            <input type="text" id="promail" class="form-control validate" name="updatemail" value="<?php echo $arr['mail']; ?>">
                                                         </div>
-
-
                                                     </div>
                                                     <div class="modal-footer d-flex justify-content-center">
                                                         <input type="submit" class="btn btn-default" id="Update" value="Update" name="updateproduct">

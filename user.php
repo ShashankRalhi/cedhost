@@ -87,4 +87,35 @@ class user
 
     return $result;
   }
+
+
+
+  //To avoid Email Duplication in DB
+  public function checkemail($conn, $email)
+  {
+    $sql = "SELECT * FROM `tbl_user` WHERE `email` = '" . $email . "' ";
+    $result = $conn->query($sql);
+    $ecount = $result->num_rows;
+    return $ecount;
+  }
+
+
+
+
+  //To avoid Mobile Duplication in DB
+  public function checkmobile($conn, $mobile)
+  {
+    $sql = "SELECT * FROM `tbl_user` WHERE `mobile` = '" . $mobile . "' ";
+    $result = $conn->query($sql);
+    $mcount = $result->num_rows;
+    return $mcount;
+  }
 }
+
+
+
+?>
+
+<script>
+
+</script>

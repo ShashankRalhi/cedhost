@@ -22,42 +22,38 @@ if (isset($_POST['register'])) {
     $pass = $_POST['pass1'];
     $pws2 = $_POST['pass2'];
 
+    $sqlemail = $obj->checkemail($dbconn->conn, $email);
 
-    if ($name == null && $mobile == null && $email == null && $sques == null && $sans == null && $pws1 == null && $pws2 == null) {
-        echo "<script>alert('please complete all the fields');</script>";
+    $sqlmobile = $obj->checkmobile($dbconn->conn, $mobile);
+
+    if ($sqlemail >= 1) {
+        echo "<script>alert('Email is already in use Plaese try with another email id');
+                            window.location.href = 'account.php';
+            </script>";
     } else {
-        if ($pass == $pws2) {
-            $_SESSION['vname'] = $name;
-            $_SESSION['vemail'] = $email;
-            $_SESSION['vmobile'] = $mobile;
-            $pass = md5($pws1);
-            $sql = $obj->insert($dbconn->conn, $name, $email, $mobile, $sques, $sans, $pass);
-            header("location:verification.php");
+        if ($sqlmobile >= 1) {
+            echo "<script>alert('Mobile is already in use Plaese try with another email id');
+                                window.location.href = 'account.php';
+                </script>";
         } else {
-            echo "<script>alert('Password not');</script>";
-            header("location:'account.php'");
+            if ($name == null && $mobile == null && $email == null && $sques == null && $sans == null && $pws1 == null && $pws2 == null) {
+                echo "<script>alert('Please complete all the fields');</script>";
+            } else {
+                if ($pass == $pws2) {
+                    $_SESSION['vname'] = $name;
+                    $_SESSION['vemail'] = $email;
+                    $_SESSION['vmobile'] = $mobile;
+                    $pass = md5($pws1);
+                    $sql = $obj->insert($dbconn->conn, $name, $email, $mobile, $sques, $sans, $pass);
+                    header("location:verification.php");
+                } else {
+                    echo "<script>alert('Password not');</script>";
+                    header("location:account.php");
+                }
+            }
         }
     }
 }
-
-// //VERIFY Email-Mobile
-// if (isset($_POST['verify'])) {
-
-//     $vemail = $_SESSION['vemail'];
-//     $vmobile = $_SESSION['vmobile'];
-
-//     $vpeotp = $_POST['eotp'];
-//     $vpmotp = $_POST['motp'];
-
-//     if ($_SESSION['otp'] == $vpeotp) {
-//         $sql = $obj->verifyemail($dbconn->conn, $vemail);
-//         if ($sql) {
-//             echo "<script>alert('Email Verified & Now you can Login');</script>";
-//             header("location:login.php");
-//         }
-//     }
-
-
 
 
 //VERIFY Email/Mobile
@@ -97,11 +93,6 @@ if (isset($_POST['verify'])) {
         echo "<script>alert('Verification Failed');</script>";
     }
 }
-
-
-
-
-
 
 
 //Send-Resend Email

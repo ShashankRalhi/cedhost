@@ -256,24 +256,15 @@ $(document).ready(function () {
             $("#prodfree").html("*Select Valid Free Domain");
             $("#prodfree").show();
             $("#submit10").attr("disabled", true);
-
             $(this).css('border', 'solid 3px red');
             count7 = 0;
         }
-
-
-
-
         else {
-
             $("#prodfree").hide();
             $(this).css('border', 'solid 3px green');
             count7 = 1;
         }
         buttonShow();
-
-
-
     });
 
 

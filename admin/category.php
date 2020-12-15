@@ -8,10 +8,6 @@ $dbconn = new admindbcon();
 $obj = new productclass();
 ?>
 
-<!-- Main content -->
-
-<!-- Header -->
-<!-- Header -->
 <div class="header bg-primary pb-6">
   <div class="container-fluid">
     <div class="header-body">
@@ -35,7 +31,7 @@ $obj = new productclass();
     </div>
   </div>
 </div>
-<!-- Page content -->
+
 <div class="container-fluid mt--6">
   <div class="row justify-content-center">
     <div class="col-xl-8">
@@ -44,11 +40,9 @@ $obj = new productclass();
           <div class="card-header bg-transparent pb-5 text-center">
             <h2>Create Category</h2>
           </div>
-          <?php //echo $msg; 
-          ?>
           <div class="card-body px-lg-5 py-lg-5">
             <div class="text-center text-muted mb-4">
-              <!-- <small>Or sign in with credentials</small> -->
+
             </div>
 
             <form role="form" method="POST" action="logic.php">
@@ -77,14 +71,7 @@ $obj = new productclass();
                   <input class="form-control" name="link" placeholder="Link" type="text">
                 </div>
               </div>
-              <!-- <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                  <label class="custom-control-label" for=" customCheckLogin">
-                    <span class="text-muted">Remember me</span>
-                  </label>
-                </div> -->
               <div class="text-center">
-                <!-- <button type="button" name="submit" class="btn btn-primary my-4">Create Category</button> -->
                 <input type="submit" value="Create Category" class="btn btn-primary" name="categorysubmit">
               </div>
             </form>
@@ -94,12 +81,7 @@ $obj = new productclass();
       </div>
     </div>
   </div>
-  <!-- <div class="row">
-        <div class="col">
-          <div class="card ">
-          <div class="card-header border-0">
-              <h3 class="mb-0">Light table</h3>
-            </div> -->
+
   <div class="table-responsive">
     <table class="table align-items-center table-flush" id="Table">
       <thead class="thead-light">
@@ -189,9 +171,7 @@ $obj = new productclass();
                         <div class="md-form mb-4">
                           <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
                           <input type="text" id="defaultForm-pass" class="form-control validate" name="link1" value="<?php echo $link ?>">
-
                         </div>
-
                         <div class="md-form mb-4">
                           <?php
                           if ($row['prod_available'] == 1) {
@@ -203,26 +183,18 @@ $obj = new productclass();
                           <select class="form-control validate" name="is_available">
                             <option value="<?php echo $row['prod_available'] ?>"><?php echo $avail ?></option>
                             <?php
-
                             if ($avail == "Available") {
                             ?>
                               <option value="2">Unavailable</option>
-
                             <?php
                             } else {
                             ?>
                               <option value="1">Available</option>
-
                             <?php
-
-
                             }
                             ?>
                           </select>
-
-
                         </div>
-
                       </div>
                       <div class="modal-footer d-flex justify-content-center">
                         <input type="submit" class="btn btn-default" id="Update" value="Update" name="categorysubmit1">
@@ -231,8 +203,6 @@ $obj = new productclass();
                   </div>
                 </div>
               </div>
-
-
         <?php
             }
           }

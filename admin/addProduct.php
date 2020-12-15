@@ -1,16 +1,13 @@
 <?php
-
-
 require 'header.php';
 
 include("admindbcon.php");
+
 include("productclass.php");
-// echo "hii";
+
 $dbconn = new admindbcon();
 
 $obj = new productclass();
-
-
 
 ?>
 <div class="header bg-primary pb-6">
@@ -72,7 +69,6 @@ $obj = new productclass();
                                                 ?>
                                             </select>
                                             <p id="prodcategory" style="color:red;"></p>
-
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -87,7 +83,7 @@ $obj = new productclass();
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-first-name">Page URL </label>
-                                            <input type="text" id="input-first-name" name="url" class="form-control" placeholder="Page URL">
+                                            <input type="text" id="prourl" name="url" class="form-control" placeholder="Page URL">
                                         </div>
                                     </div>
                                 </div>
