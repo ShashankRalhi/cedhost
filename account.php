@@ -59,11 +59,11 @@
 					<h3>login information</h3>
 					<div>
 						<span>Password<label>*</label></span>
-						<input type="password" name="pass1" id="pass" required onblur="this.value=removeSpaces(this.value);" maxlength="16" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+						<input type="password" name="pass1" id="pass" required maxlength="16" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onKeyDown="javascript: var keycode = keyPressed(event); if(keycode==32){ return false; }" />
 					</div>
 					<div>
 						<span>Confirm Password<label>*</label></span>
-						<input type="password" name="pass2" id="cpass" required onblur="this.value=removeSpaces(this.value);" maxlength="16" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+						<input type="password" name="pass2" id="cpass" required maxlength="16" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onKeyDown="javascript: var keycode = keyPressed(event); if(keycode==32){ return false; }" />
 					</div>
 				</div>
 
@@ -100,6 +100,26 @@
 
 
 	<script>
+		function keyPressed() {
+			var key = event.keyCode || event.charCode || event.which;
+			return key;
+		}
+
+
+
+		function alexa() {
+			$alex = $('#ans').val();
+			if (Number.isInteger(parseInt($alex))) {
+				alert("answer can be only in alphanumeric or alphabets");
+				$('#ans').val("");
+				return false;
+			} else {
+				return true;
+			}
+
+		}
+
+
 		var count_mob = 0;
 		var count_mob2 = 0;
 		var count_pass = 0;
@@ -146,61 +166,42 @@
 		});
 
 
-
 		$("#mobile").bind("keyup", function(e) {
 
-			mobile_no = $("#mobile").val();
-			count_mob += $("#mobile").length;
+			mobile = $("#mobile").val();
 
 			var fchar = $("#mobile").val().substr(0, 1);
 			var schar = $("#mobile").val().substr(1, 1);
 
+			count2 = 0;
 			if (fchar == 0) {
 				$('#mobile').attr('maxlength', '11');
-				$('#mobile').attr('minlength', '11');
-				if (count_mob == 10) {
-					for (i = 1; i < 11; i++) {
-						var a = $("#mobile").val().substr(i, 1);
-						var b = $("#mobile").val().substr(i + 1, 1);
-						if (a == b) {
-							v++;
-						}
-						if (v == 10) {
-							$("#mobile").val("");
-							count_mob = 0;
-							v = 0;
-						}
-					}
-				}
 				if (schar == 0) {
 					$("#mobile").val(0);
-					count_mob = 0;
-
 					if (fchar == "") {
 						$("#mobile").val("");
-						count_mob = 0;
 					}
+
 				}
 			} else {
 				$('#mobile').attr('maxlength', '10');
-				$('#mobile').attr('minlength', '10');
-				//console.log(count_mob2);
-				console.log(count_mob);
-				if (count_mob == 10) {
-					for (i = 0; i < 10; i++) {
-						var a = $("#mobile").val().substr(i, 1);
-						var b = $("#mobile").val().substr(i + 1, 1);
-						if (a == b) {
-							v++;
+			}
+			if (mobile.length > 9) {
+				for (i = 0; i <= mobile.length; i++) {
 
-
-						}
-						if (v == 9) {
+					if (mobile.substr(i, 1) == mobile.substr(i + 1, 1)) {
+						count2++;
+						console.log(count2);
+						if (count2 == 9) {
+							count2 = 0;
+							alert('Invalid Phone no.');
 							$("#mobile").val("");
-							count_mob = 0;
-							v = 0;
-
+							mobile = '';
+							console.log(mobile.length);
 						}
+
+					} else if (mobile.substr(i, 1) != mobile.substr(i + 1, 1)) {
+						count2 = 0;
 					}
 				}
 			}

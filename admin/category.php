@@ -41,10 +41,7 @@ $obj = new productclass();
             <h2>Create Category</h2>
           </div>
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="text-center text-muted mb-4">
-
-            </div>
-
+            <div class="text-center text-muted mb-4"></div>
             <form role="form" method="POST" action="logic.php">
               <div class="form-group mb-3">
                 <div class="input-group input-group-merge input-group-alternative">
@@ -83,13 +80,13 @@ $obj = new productclass();
   </div>
 
   <div class="table-responsive">
-    <table class="table align-items-center table-flush" id="Table">
+    <table class="table align-items-center table-flush" id="Table" style="text-align:center">
       <thead class="thead-light">
         <tr>
           <th scope="col" class="sort" data-sort="name">Id</th>
           <th scope="col" class="sort" data-sort="budget">Parent Product Id</th>
           <th scope="col" class="sort" data-sort="status">Product Name </th>
-          <th scope="col">Link</th>
+          <!-- <th scope="col">Link</th> -->
           <th scope="col">Product Available</th>
           <th scope="col" class="sort" data-sort="completion">Product Launch Date</th>
           <th scope="col">Action</th>
@@ -120,16 +117,7 @@ $obj = new productclass();
                 <td>
                   <?php echo $row['prod_name']; ?>
                 </td>
-                <td>
-                  <?php
-                  if ($row['html'] == "") {
-                    $link = "Null";
-                  } else {
-                    $link = $row['html'];
-                  }
-                  echo $link;
-                  ?>
-                </td>
+
                 <td>
                   <?php echo $row['prod_available']; ?>
                 </td>

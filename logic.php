@@ -12,6 +12,7 @@ include("user.php");
 $obj = new user();
 $dbconn = new Dbcon();
 
+
 //REGISTER USER
 if (isset($_POST['register'])) {
     $name = $_POST['name'];
@@ -32,7 +33,7 @@ if (isset($_POST['register'])) {
             </script>";
     } else {
         if ($sqlmobile >= 1) {
-            echo "<script>alert('Mobile is already in use Plaese try with another email id');
+            echo "<script>alert('Mobile is already in use Plaese try with another mobile number');
                                 window.location.href = 'account.php';
                 </script>";
         } else {
@@ -43,7 +44,7 @@ if (isset($_POST['register'])) {
                     $_SESSION['vname'] = $name;
                     $_SESSION['vemail'] = $email;
                     $_SESSION['vmobile'] = $mobile;
-                    $pass = md5($pws1);
+                    $pass = md5($pass);
                     $sql = $obj->insert($dbconn->conn, $name, $email, $mobile, $sques, $sans, $pass);
                     header("location:verification.php");
                 } else {
@@ -56,43 +57,46 @@ if (isset($_POST['register'])) {
 }
 
 
-//VERIFY Email/Mobile
-if (isset($_POST['verify'])) {
-
-    $vemail = $_SESSION['vemail'];
-    $vmobile = $_SESSION['vmobile'];
-
-    $vpeotp = $_POST['eotp'];
-    $vpmotp = $_POST['motp'];
 
 
-    if ($_SESSION['otp'] == $vpeotp) {
-        $sql = $obj->verifyemail($dbconn->conn, $vemail);
-        if ($sql) {
-            echo "<script>alert('Email Verified & Now you can Login');</script>";
-            header("location:login.php");
-        }
-    }
 
-    if ($_SESSION['otpm'] == $vpmotp) {
-        $sql = $obj->verifymobile($dbconn->conn, $vmobile);
-        if ($sql) {
-            echo "<script>alert('Mobile Verified & Now you can Login');</script>";
-            header("location:login.php");
-        }
-    }
+// //VERIFY Email/Mobile
+// if (isset($_POST['verify'])) {
+//     $vemail = $_SESSION['vemail'];
+//     $vmobile = $_SESSION['vmobile'];
 
-    if ($_SESSION['otp'] == $vpeotp && $_SESSION['otpm'] == $vpmotp) {
-        // echo "<script>alert('Email Success');</script>";
-        $sql = $obj->verify($dbconn->conn, $vemail, $vmobile);
-        if ($sql) {
-            echo "<script>alert('Email & Mobile Verified');</script>";
-            header("location:login.php");
-        }
-    } else {
-        echo "<script>alert('Verification Failed');</script>";
-    }
-}
+//     $vpeotp = $_POST['eotp'];
+//     $vpmotp = $_POST['motp'];
+
+
+//     if ($_SESSION['otp'] == $vpeotp) {
+//         $sql = $obj->verifyemail($dbconn->conn, $vemail);
+//         if ($sql) {
+//             echo "<script>alert('Email Verified & Now you can Login');</script>";
+//             header("location:login.php");
+//         }
+//     }
+//     if ($_SESSION['otpm'] == $vpmotp) {
+//         $sql = $obj->verifymobile($dbconn->conn, $vmobile);
+//         if ($sql) {
+//             echo "<script>alert('Mobile Verified & Now you can Login');</script>";
+//             header("location:login.php");
+//         }
+//     }
+//     if ($_SESSION['otp'] == $vpeotp && $_SESSION['otpm'] == $vpmotp) {
+//         // echo "<script>alert('Email Success');</script>";
+//         $sql = $obj->verify($dbconn->conn, $vemail, $vmobile);
+//         if ($sql) {
+//             echo "<script>alert('Email & Mobile Verified');</script>";
+//             header("location:login.php");
+//         }
+//     } else {
+//         echo "<script>alert('Verification Failed');</script>";
+//     }
+// }
+
+
+
 
 
 //Send-Resend Email
@@ -181,6 +185,8 @@ if (isset($_POST['rsemail2'])) {
 
 
 
+
+
 //For Login
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -210,6 +216,44 @@ if (isset($_POST['login'])) {
     //echo "0 results";
 }
 
+
+
+//VERIFY Email
+if (isset($_POST['verifye'])) {
+    $vemail = $_SESSION['vemail'];
+
+    $vpeotp = $_POST['eotp'];
+
+    if ($_SESSION['otp'] == $vpeotp) {
+        $sql = $obj->verifyemail($dbconn->conn, $vemail);
+        if ($sql) {
+            echo "<script>alert('Email Verified & Now you can Login');
+                    window.location='login.php';</script>";
+            // header("location:login.php");
+        }
+    } else {
+        echo "<script>alert('Verification Failed');</script>";
+    }
+}
+
+
+
+//VERIFY Mobile
+if (isset($_POST['verifym'])) {
+    $vmobile = $_SESSION['vmobile'];
+    $vpmotp = $_POST['motp'];
+
+    if ($_SESSION['otpm'] == $vpmotp) {
+        $sql = $obj->verifymobile($dbconn->conn, $vmobile);
+        if ($sql) {
+            echo "<script>alert('Mobile Verified & Now you can Login');
+                window.location='login.php';</script>";
+            // header("location:login.php");
+        }
+    } else {
+        echo "<script>alert('Verification Failed');</script>";
+    }
+}
 ?>
 
 <script>

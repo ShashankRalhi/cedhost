@@ -16,7 +16,11 @@ class user
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
-  } //Fetch Category
+  } 
+  
+  
+  
+  //Fetch Category
   function fetchcategory($conn)
   {
     $row1 = array();

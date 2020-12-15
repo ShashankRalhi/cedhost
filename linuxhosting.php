@@ -21,7 +21,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="tab-prices">
+	<!-- <div class="tab-prices">
 		<div class="container">
 			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 				<ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
@@ -200,7 +200,7 @@
 				<li><a href="#"><img src="images/c6.png" title="sony" /></a></li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
 	<!-- clients -->
 	<div class="whatdo">
 		<div class="container">

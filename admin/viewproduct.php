@@ -49,7 +49,7 @@ $obj = new productclass();
                                 <th scope="col" class="sort" data-sort="completion">Product id</th>
                                 <th scope="col" class="sort" data-sort="name">Product Parent</th>
                                 <th scope="col" class="sort" data-sort="budget">Product Name</th>
-                                <th scope="col" class="sort" data-sort="status">Link</th>
+                                <!-- <th scope="col" class="sort" data-sort="status">Link</th> -->
                                 <th scope="col">Available</th>
 
                                 <th scope="col">Montly Price</th>
@@ -83,11 +83,7 @@ $obj = new productclass();
                                         </td>
                                         <td>
                                             <?php echo $row['prod_name'] ?>
-                                        <td>
 
-                                            <?php echo $row['html'] ?>
-
-                                        </td>
                                         <td>
 
                                             <?php if ($row['prod_available'] == 1) {
@@ -199,7 +195,6 @@ $obj = new productclass();
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
                                                             <input type="text" id="prourl" class="form-control validate" name="updatelink" value="<?php echo $row['html'] ?>">
-
                                                         </div>
 
                                                         <div class="md-form mb-4">
