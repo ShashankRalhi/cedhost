@@ -83,12 +83,12 @@ $obj = new productclass();
     <table class="table align-items-center table-flush" id="Table" style="text-align:center">
       <thead class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Id</th>
-          <th scope="col" class="sort" data-sort="budget">Parent Product Id</th>
-          <th scope="col" class="sort" data-sort="status">Product Name </th>
+
+          <th scope="col" class="sort" data-sort="budget">Category Id</th>
+          <th scope="col" class="sort" data-sort="status">Category Name </th>
           <!-- <th scope="col">Link</th> -->
-          <th scope="col">Product Available</th>
-          <th scope="col" class="sort" data-sort="completion">Product Launch Date</th>
+          <th scope="col">Category Available</th>
+          <th scope="col" class="sort" data-sort="completion">Launch Date</th>
           <th scope="col">Action</th>
 
 
@@ -103,9 +103,6 @@ $obj = new productclass();
             if ($row['id'] != 1) {
         ?>
               <tr>
-                <th scope="row">
-                  <?php echo $row['id']; ?>
-                </th>
                 <td class="budget">
                   <?php
                   if ($row['prod_parent_id'] == 1) {
@@ -156,10 +153,10 @@ $obj = new productclass();
                         </div>
 
 
-                        <div class="md-form mb-4">
+                        <!-- <div class="md-form mb-4">
                           <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
-                          <input type="text" id="defaultForm-pass" class="form-control validate" name="link1" value="<?php echo $link ?>">
-                        </div>
+                          <input type="text" id="defaultForm-pass" class="form-control validate" name="link1">
+                        </div> -->
                         <div class="md-form mb-4">
                           <?php
                           if ($row['prod_available'] == 1) {
