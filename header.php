@@ -49,11 +49,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script type="text/javascript" src="js/jquery.hoverdir.js"></script>
 	<script type="text/javascript">
 		$(function() {
-
 			$(' #da-thumbs > li ').each(function() {
 				$(this).hoverdir();
 			});
-
 		});
 	</script>
 	<script src="js/jquery.swipebox.min.js"></script>
@@ -91,12 +89,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href="services.php">Services</a></li>
 							<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hosting<i class="caret"></i></a>
 								<ul class="dropdown-menu">
-
 									<?php
 									$row1 = $pdt->fetchcategory($obj->conn);
 									if (isset($row1)) {
 										foreach ($row1 as $key => $row) {
-
 											if ($row['id'] != 1) {
 									?>
 												<li><a href="catpage.php?id=<?php echo $row['id']; ?>"><?php echo $row['prod_name']; ?></a></li>
@@ -105,17 +101,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										}
 									}
 									?>
-
-									<!-- <li><a href="linuxhosting.php">Linux hosting</a></li>
-								<li><a href="wordpresshosting.php">WordPress Hosting</a></li>
-								<li><a href="windowshosting.php">Windows Hosting</a></li>
-								<li><a href="cmshosting.php">CMS Hosting</a></li> -->
 								</ul>
 							</li>
 							<li><a href="pricing.php">Pricing</a></li>
 							<li><a href="blog.php">Blog</a></li>
 							<li><a href="contact.php">Contact</a></li>
-							<li><a href="cart.php">Cart&#x1f6d2;</a></li>
+							<li><a href="cart.php">&#x1f6d2;</a></li>
 							<?php
 							if (isset($_SESSION['username'])) {
 							?>

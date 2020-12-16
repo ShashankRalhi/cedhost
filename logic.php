@@ -47,8 +47,9 @@ if (isset($_POST['register'])) {
                     $sql = $obj->insert($dbconn->conn, $name, $email, $mobile, $sques, $sans, $pass);
                     header("location:verification.php");
                 } else {
-                    echo "<script>alert('Password not');</script>";
-                    header("location:account.php");
+                    echo "<script>alert('Password and Confirm Password both are not same');
+                        window.location='account.php';</script>";
+                    //header("location:account.php");
                 }
             }
         }
@@ -83,7 +84,9 @@ if (isset($_POST['rsemail1'])) {
         $mail->Body = 'Hi User,Here is your otp for account verification' . " " . $otp;
         $mail->AltBody = 'Body in plain text for non-HTML mail clients';
         $mail->send();
-        header('location: verification.php');
+        //header('location: verification.php');
+        echo "<script>alert('Email OTP Send Successfully');
+        window.location='verification.php';</script>";
     } catch (Exception $e) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     }
@@ -136,7 +139,9 @@ if (isset($_POST['rsemail2'])) {
     } else {
         echo $response;
     }
-    header("location:verification.php");
+    //header("location:verification.php");
+    echo "<script>alert('Mobile OTP Send Successfully');
+			window.location='verification.php';</script>";
 }
 
 
