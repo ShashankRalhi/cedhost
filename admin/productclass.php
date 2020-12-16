@@ -66,10 +66,10 @@ class productclass
 
 
     //ADD PRODUCT
-    function addproduct($name, $select, $link, $conn)
+    function addproduct($name, $select, $conn)
     {
         $sql = "INSERT INTO tbl_product (prod_parent_id, prod_name, html, prod_available, prod_launch_date)
-        VALUES ('" . $select . "', '" . $name . "', '" . $link . "', 1, NOW())";
+        VALUES ('" . $select . "', '" . $name . "', NULL , 1, NOW())";
 
         if ($conn->query($sql) === true) {
             $last_id = $conn->insert_id;
@@ -125,10 +125,10 @@ class productclass
 
 
 
-    function updateproduct($updatename, $updateavailable, $link, $hidden, $conn)
+    function updateproduct($updatename, $updateavailable, $hidden, $conn)
     {
 
-        $sql = "UPDATE tbl_product SET prod_name='" . $updatename . "', html='" . $link . "', prod_available='" . $updateavailable . "' WHERE id='" . $hidden . "'";
+        $sql = "UPDATE tbl_product SET prod_name='" . $updatename . "', prod_available='" . $updateavailable . "' WHERE id='" . $hidden . "'";
 
         if ($conn->query($sql) === TRUE) {
 

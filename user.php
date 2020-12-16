@@ -16,10 +16,10 @@ class user
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
-  } 
-  
-  
-  
+  }
+
+
+
   //Fetch Category
   function fetchcategory($conn)
   {
@@ -55,20 +55,11 @@ class user
       }
       return $row1;
     } else {
-      echo "0 results";
+      echo "<script>alert('Invalid User Email/Password');
+      window.location='login.php';</script>";
     }
   }
 
-
-  //Verify Data
-  public function verify($conn, $vemail, $vmobile)
-  {
-    $sql = "UPDATE `tbl_user` SET `email_approved` = 1 , `phone_approved` = 1 , `active` = 1 WHERE `email` = '" . $vemail . "' AND `mobile` = '" . $vmobile . "' ";
-
-    $result = $conn->query($sql);
-
-    return $result;
-  }
 
 
   //Verify Email Data

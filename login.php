@@ -22,7 +22,7 @@
 								</div>
 								<div>
 									<span>Password<label>*</label></span>
-									<input type="password" name="password1">
+									<input type="password" name="pass1">
 								</div>
 								<a class="forgot" href="#">Forgot Your Password?</a>
 								<input type="submit" value="Login" name="login">

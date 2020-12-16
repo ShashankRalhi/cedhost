@@ -153,10 +153,10 @@ $obj = new productclass();
                         </div>
 
 
-                        <!-- <div class="md-form mb-4">
-                          <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
-                          <input type="text" id="defaultForm-pass" class="form-control validate" name="link1">
-                        </div> -->
+                        <div class="md-form mb-4">
+                          <!-- <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label> -->
+                          <input type="hidden" id="defaultForm-pass" class="form-control validate" name="link1">
+                        </div>
                         <div class="md-form mb-4">
                           <?php
                           if ($row['prod_available'] == 1) {

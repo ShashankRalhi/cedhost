@@ -177,7 +177,7 @@ $obj = new productclass();
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="logic.php" method="post">
+                                                <form action="logic.php" method="POST">
                                                     <div class="modal-body mx-3">
                                                         <div class="md-form mb-5">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-email">Parent Name</label>
@@ -191,10 +191,9 @@ $obj = new productclass();
 
                                                         </div>
 
-
                                                         <div class="md-form mb-4">
-                                                            <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
-                                                            <input type="text" id="prourl" class="form-control validate" name="updatelink" value="<?php echo $row['html'] ?>">
+                                                            <!-- <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label> -->
+                                                            <input type="hidden" id="prourl" class="form-control validate" name="updatelink" value="<?php echo $row['html'] ?>">
                                                         </div>
 
                                                         <div class="md-form mb-4">
@@ -208,37 +207,26 @@ $obj = new productclass();
                                                             <select class="form-control validate" name="updateavailable">
                                                                 <option value="<?php echo $row['prod_available'] ?>"><?php echo $avail ?></option>
                                                                 <?php
-
                                                                 if ($avail == "Available") {
                                                                 ?>
                                                                     <option value="2">Unavailable</option>
-
                                                                 <?php
                                                                 } else {
                                                                 ?>
                                                                     <option value="1">Available</option>
-
                                                                 <?php
-
-
                                                                 }
                                                                 ?>
                                                             </select>
-
-
                                                         </div>
-
-
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Monthly Price</label>
                                                             <input type="text" id="proprice" class="form-control validate" name="updatemonthly" value="<?php echo $row['mon_price']; ?>">
-
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Annual Price</label>
                                                             <input type="text" id="proannualprice" class="form-control validate" name="updateannual" value="<?php echo $row['annual_price']; ?>">
-
                                                         </div>
 
                                                         <div class="md-form mb-4">
@@ -249,25 +237,21 @@ $obj = new productclass();
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Webspace</label>
                                                             <input type="text" id="proweb" class="form-control validate" name="updatewebspace" value="<?php echo $arr['webspace']; ?>">
-
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Band Width</label>
                                                             <input type="text" id="proband" class="form-control validate" name="updateband" value="<?php echo $arr['band']; ?>">
-
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Free Domain</label>
                                                             <input type="text" id="profree" class="form-control validate" name="updatefree" value="<?php echo $arr['free']; ?>">
-
                                                         </div>
 
                                                         <div class="md-form mb-4">
                                                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Language</label>
                                                             <input type="text" id="prolang" class="form-control validate" name="updatelang" value="<?php echo $arr['lang']; ?>">
-
                                                         </div>
 
                                                         <div class="md-form mb-4">

@@ -50,7 +50,7 @@ if (isset($_POST['submit10'])) {
 
     $name = isset($_POST['name']) ? $_POST['name'] : "";
     $select = isset($_POST['select']) ? $_POST['select'] : "";
-    $link = isset($_POST['url']) ? $_POST['url'] : "";
+    // $link = isset($_POST['url']) ? $_POST['url'] : "";
     $price1 = $_POST['price1'];
     $price2 = $_POST['price2'];
 
@@ -62,7 +62,7 @@ if (isset($_POST['submit10'])) {
     $lang = $_POST['lang'];
     $mail = $_POST['mail'];
 
-    $row = $obj->addproduct($name, $select, $link, $dbconn->conn);
+    $row = $obj->addproduct($name, $select, $dbconn->conn);
     $arr = array(
         "webspace" => $webspace,
         "band" => $band,
@@ -84,7 +84,7 @@ if (isset($_POST['updateproduct'])) {
 
     $updatename = isset($_POST['updatename']) ? $_POST['updatename'] : "";
     $updateavailable = isset($_POST['updateavailable']) ? $_POST['updateavailable'] : "";
-    $link = isset($_POST['updatelink']) ? $_POST['updatelink'] : "";
+    // $link = isset($_POST['updatelink']) ? $_POST['updatelink'] : "";
     $hidden = ($_POST['hidden']);
 
     $updatemonthly = $_POST['updatemonthly'];
@@ -98,7 +98,7 @@ if (isset($_POST['updateproduct'])) {
     $updatelang = $_POST['updatelang'];
     $updatemail = $_POST['updatemail'];
 
-    $row = $obj->updateproduct($updatename, $updateavailable, $link, $hidden, $dbconn->conn);
+    $row = $obj->updateproduct($updatename, $updateavailable, $hidden, $dbconn->conn);
 
     $arr = array(
         "webspace" => $updatewebspace,

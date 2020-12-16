@@ -23,7 +23,6 @@
 				</td>
 				<td>
 					<input type="submit" value="Send Email" name="rsemail1" id="semail" class="a">
-					<!-- <input type="submit" value="Resend Email" name="rsemail1" id="rvemail" class="a"> -->
 					<input type="submit" value="Verify" name="verifye" id="verifye" class="a">
 				</td>
 			</tr>
@@ -49,7 +48,6 @@
 				</td>
 				<td>
 					<input type="submit" value="Send Mobile" name="rsemail2" id="semail" class="a">
-					<!-- <input type="submit" value="Resend Mobile" name="rsemail2" id="rvemail" class="a"> -->
 					<input type="submit" value="Verify" name="verifym" id="verify" class="a">
 				</td>
 			</tr>
@@ -58,22 +56,3 @@
 </div>
 
 <?php include('footer.php'); ?>
-
-
-
-<!-- <script>
-	$(document).ready(function() {
-		// $("#rvemail").attr("disabled", true);
-		$("#eotp").attr("disabled", true);
-		$("#verifye").attr("disabled", true);
-
-		$("#semail").click(function() {
-			$("#eotp").attr("disabled", false);
-		});
-
-		$email = $("#eotp").val();
-		if ($email != "") {
-			$("#verifye").attr("disabled", false);
-		}
-	});
-</script> -->
