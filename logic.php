@@ -57,14 +57,13 @@ if (isset($_POST['register'])) {
 
 
 
-//Send-Resend Email
+//Send Email
 if (isset($_POST['rsemail1'])) {
 
     //Email Verification Code
     $otp = rand(1000, 9999);
-    $otpm = rand(1000, 9999);
     $_SESSION['otp'] = $otp;
-    $_SESSION['otpm'] = $otpm;
+
     $mail = new PHPMailer();
     try {
         $mail->isSMTP(true);
@@ -81,7 +80,7 @@ if (isset($_POST['rsemail1'])) {
 
         $mail->isHTML(true);
         $mail->Subject = 'Account Verification';
-        $mail->Body = 'Hi User,Here is your otp for account verification' . $otp;
+        $mail->Body = 'Hi User,Here is your otp for account verification' . " " . $otp;
         $mail->AltBody = 'Body in plain text for non-HTML mail clients';
         $mail->send();
         header('location: verification.php');
@@ -93,7 +92,7 @@ if (isset($_POST['rsemail1'])) {
 
 
 
-//Send-Resend Mobile
+//Send Mobile
 if (isset($_POST['rsemail2'])) {
 
     $otpm = rand(1000, 9999);

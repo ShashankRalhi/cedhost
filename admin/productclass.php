@@ -154,7 +154,7 @@ class productclass
     }
 
 
-
+    //Delete Product
     function deleteproduct($id, $conn)
     {
         $sql = "DELETE tbl_product,tbl_product_description FROM tbl_product JOIN tbl_product_description 
